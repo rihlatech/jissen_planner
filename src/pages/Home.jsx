@@ -33,6 +33,57 @@ const features = [
   },
 ];
 
+const audiences = [
+  {
+    number: "01",
+    title: "Students",
+    description:
+      "Keep classes, assignments, and exams in one calm place.",
+  },
+  {
+    number: "02",
+    title: "Professionals",
+    description:
+      "Protect your focus, run your meetings and finish high impact work.",
+  },
+  {
+    number: "03",
+    title: "Entrepreneurs",
+    description:
+      "Turn big ideas and busy weeks into a clear daily plan.",
+  },
+  {
+    number: "04",
+    title: "Personal growth",
+    description:
+      "Build habits, make time for self-care and follow through on your goals.",
+  },
+];
+
+const aiBenefits = [
+  {
+    number: "01",
+    title: "Daily check-ins",
+    description: "Only when you've given permission.",
+  },
+  {
+    number: "02",
+    title: "Talk through your plan",
+    description:
+      "Ask how your week went, or what's on your plate today.",
+  },
+  {
+    number: "03",
+    title: "Know your next move",
+    description: "Get recommendations for what to do next.",
+  },
+  {
+    number: "04",
+    title: "Chat or talk by voice",
+    description: "Choose the way you want to interact with your AI companion.",
+  },
+];
+
 function Reveal({ children, delay = 0, className = "" }) {
   return (
     <motion.div
@@ -79,7 +130,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-4xl"
+            className="max-w-5xl"
           >
             <div className="flex items-center gap-3">
               <span className="h-px w-9 bg-[#D6BB8B]" />
@@ -88,28 +139,33 @@ export default function Home() {
               </p>
             </div>
 
-            <h1 className="font-display mt-7 text-6xl font-light leading-[0.9] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[112px]">
-              Plan with purpose.
+            <h1 className="font-display mt-7 text-5xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[104px]">
+              Start Each Day
               <br />
-              Show up for
-              <br />
-              <span className="text-[#E3C795]">yourself.</span>
+              with <span className="text-[#E3C795]">Clarity.</span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-sm leading-7 text-white/80 sm:text-base sm:leading-8">
-              Your goals deserve more than good intentions. Lock-In brings
-              planning, daily action, self-care, and reflection into one
-              thoughtful space.
+            <p className="mt-7 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
+              #1 productivity app for students, professionals and
+              entrepreneurs.
+            </p>
+
+            <p className="mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
+              This is where you stop planning and start doing. This is where
+              you lock-in.
+              <span className="mt-3 block text-xs uppercase tracking-[0.2em] text-[#E3C795] sm:text-sm">
+                Intentional. Disciplined. Modern.
+              </span>
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link
-  to="/releases"
-  className="inline-flex items-center gap-4 bg-[#F8F4ED] px-6 py-4 text-sm text-[#25231F] transition-colors duration-300 hover:bg-[#E3C795]"
->
-  Explore Lock-In
-  <span aria-hidden="true">↗</span>
-</Link>
+                to="/releases"
+                className="inline-flex items-center gap-4 bg-[#F8F4ED] px-6 py-4 text-sm text-[#25231F] transition-colors duration-300 hover:bg-[#E3C795]"
+              >
+                Explore Lock-In
+                <span aria-hidden="true">↗</span>
+              </Link>
 
               <a
                 href="#philosophy"
@@ -158,8 +214,51 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* Feature overview */}
+      {/* Who it's for */}
       <section className="border-y border-[#25231F]/10 bg-[#F1EADF]">
+        <div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 sm:py-28 lg:px-14 lg:py-32">
+          <Reveal>
+            <SectionLabel>Who it's for</SectionLabel>
+
+            <div className="mt-5 grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-end">
+              <h2 className="font-display max-w-3xl text-5xl font-light leading-[0.98] sm:text-6xl md:text-7xl">
+                A planner for the way you work and live.
+              </h2>
+
+              <p className="max-w-lg text-sm leading-7 text-[#625C53] md:justify-self-end">
+                Whatever you're working toward, give your time, goals, and
+                everyday responsibilities a place to come together.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
+            {audiences.map((audience, index) => (
+              <Reveal key={audience.number} delay={index * 0.08}>
+                <article className="h-full border-t border-[#8B714A]/50 pt-5">
+                  <div className="flex items-center justify-between">
+                    <span className="font-display text-3xl font-light text-[#8B714A]">
+                      {audience.number}
+                    </span>
+                    <span className="h-px w-8 bg-[#8B714A]/40" />
+                  </div>
+
+                  <h3 className="font-display mt-7 text-3xl font-light leading-tight sm:text-4xl">
+                    {audience.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-[#625C53]">
+                    {audience.description}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature overview */}
+      <section className="border-b border-[#25231F]/10 bg-[#F8F4ED]">
         <div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 sm:py-28 lg:px-14">
           <Reveal>
             <SectionLabel>Designed around your life</SectionLabel>
@@ -260,59 +359,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AI feature */}
+      {/* Lock-In AI Premium */}
       <section className="bg-[#25231F] text-[#F8F4ED]">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 sm:py-28 md:grid-cols-[1.1fr_0.9fr] md:items-center lg:px-14 lg:py-32">
           <Reveal>
-            <SectionLabel>Thoughtful assistance</SectionLabel>
+            <SectionLabel>Lock-In AI — Premium</SectionLabel>
 
             <h2 className="font-display mt-5 max-w-2xl text-5xl font-light leading-[0.98] sm:text-6xl md:text-7xl">
-              A little help when you need a clearer next step.
+              An AI companion that's dedicated to you.
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-white/65 sm:text-base sm:leading-8">
-              The planned Lock-In AI experience brings together planning
-              assistance, progress insights, and smart recommendations.
-              Premium is intended to include AI chat and voice within defined
-              usage limits, rather than unlimited usage.
+            <p className="mt-6 max-w-xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
+              It checks in on you and you can ask it anything about your plan,
+              any time.
             </p>
 
             <Link
-  to="/releases#whats-included"
-  className="mt-8 inline-flex items-center gap-3 border border-[#D6BB8B]/60 px-6 py-4 text-sm transition-colors duration-300 hover:bg-[#F8F4ED] hover:text-[#25231F]"
->
-  Explore planned features <span aria-hidden="true">↗</span>
-</Link>
+              to="/releases#whats-included"
+              className="mt-8 inline-flex items-center gap-3 border border-[#D6BB8B]/60 px-6 py-4 text-sm transition-colors duration-300 hover:bg-[#F8F4ED] hover:text-[#25231F]"
+            >
+              Explore planned features
+              <span aria-hidden="true">↗</span>
+            </Link>
           </Reveal>
 
           <Reveal delay={0.15}>
             <div className="border border-white/15 p-6 sm:p-9">
               <p className="text-xs uppercase tracking-[0.2em] text-[#D6BB8B]">
-                Your planning companion
+                Your personal AI companion
               </p>
 
               <div className="mt-8 space-y-0">
-                {[
-                  ["01", "Planning assistance"],
-                  ["02", "Progress insights"],
-                  ["03", "Smart recommendations"],
-                  ["04", "Chat and voice"],
-                ].map(([number, title]) => (
+                {aiBenefits.map((benefit) => (
                   <div
-                    key={number}
-                    className="flex items-center gap-5 border-t border-white/15 py-5"
+                    key={benefit.number}
+                    className="flex gap-5 border-t border-white/15 py-5"
                   >
                     <span className="font-display text-2xl font-light text-[#D6BB8B]">
-                      {number}
+                      {benefit.number}
                     </span>
-                    <span className="text-sm text-white/85">{title}</span>
+
+                    <div>
+                      <h3 className="text-sm font-medium text-white/90">
+                        {benefit.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-white/60">
+                        {benefit.description}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
 
               <p className="mt-5 text-xs leading-6 text-white/45">
-                Features and allowances are subject to final release
-                confirmation.
+                AI availability and usage allowances depend on the selected
+                plan and final release configuration.
               </p>
             </div>
           </Reveal>
@@ -337,7 +438,7 @@ export default function Home() {
         </Reveal>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">
-          <Reveal direction="left">
+          <Reveal>
             <article className="border border-[#25231F]/15 p-6 sm:p-8">
               <p className="text-xs uppercase tracking-[0.2em] text-[#8B714A]">
                 Standard
@@ -356,7 +457,7 @@ export default function Home() {
             </article>
           </Reveal>
 
-          <Reveal direction="right" delay={0.1}>
+          <Reveal delay={0.1}>
             <article className="border border-[#8B714A]/50 bg-[#E9DFCE] p-6 sm:p-8">
               <p className="text-xs uppercase tracking-[0.2em] text-[#765C38]">
                 Premium
@@ -385,11 +486,12 @@ export default function Home() {
         <Reveal>
           <div className="mt-8">
             <Link
-  to="/releases"
-  className="inline-flex items-center gap-3 border border-[#25231F] px-6 py-4 text-sm transition-colors duration-300 hover:bg-[#25231F] hover:text-[#F8F4ED]"
->
-  View the full release <span aria-hidden="true">↗</span>
-</Link>
+              to="/releases"
+              className="inline-flex items-center gap-3 border border-[#25231F] px-6 py-4 text-sm transition-colors duration-300 hover:bg-[#25231F] hover:text-[#F8F4ED]"
+            >
+              View the full release
+              <span aria-hidden="true">↗</span>
+            </Link>
           </div>
         </Reveal>
       </section>
@@ -411,11 +513,12 @@ export default function Home() {
               </p>
 
               <Link
-  to="/releases"
-  className="inline-flex shrink-0 items-center justify-center gap-4 bg-[#25231F] px-6 py-4 text-sm text-[#F8F4ED] transition-colors duration-300 hover:bg-[#8B714A]"
->
-  Discover V1.0.0 <span aria-hidden="true">↗</span>
-</Link>
+                to="/releases"
+                className="inline-flex shrink-0 items-center justify-center gap-4 bg-[#25231F] px-6 py-4 text-sm text-[#F8F4ED] transition-colors duration-300 hover:bg-[#8B714A]"
+              >
+                Discover V1.0.0
+                <span aria-hidden="true">↗</span>
+              </Link>
             </div>
           </Reveal>
         </div>
