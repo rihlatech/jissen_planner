@@ -8,6 +8,7 @@ const links = [
   { label: "Releases", to: "/releases" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
+  { label: "FAQs", to: "/faq" },
 ];
 
 export default function Navbar() {
@@ -70,7 +71,7 @@ export default function Navbar() {
           ))}
 
           <Link
-            to="/releases"
+            to="/contact"
             className="ml-1 border border-[#25231F] px-5 py-3 text-xs transition-colors duration-300 hover:bg-[#25231F] hover:text-[#F8F4ED]"
           >
             Get Started <span aria-hidden="true">↗</span>
@@ -131,7 +132,7 @@ export default function Navbar() {
               ))}
 
               <Link
-                to="/releases"
+                to="/contact"
                 onClick={() => setMenuOpen(false)}
                 className="mt-5 flex items-center justify-between bg-[#25231F] px-5 py-4 text-sm text-[#F8F4ED]"
               >
