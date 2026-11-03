@@ -1,26 +1,41 @@
-
 import { Link } from "react-router-dom";
 
-const sections = [
-  ["who-we-are", "1. Who We Are"],
-  ["account", "2. Eligibility and Your Account"],
-  ["service", "3. What Lock-In Offers"],
-  ["plans", "4. Plans, Prices and Payment"],
-  ["refunds", "5. Refunds and Cancellation"],
-  ["ai", "6. Lock-In AI"],
-  ["acceptable-use", "7. Acceptable Use"],
-  ["content", "8. Your Content"],
-  ["intellectual-property", "9. Our Intellectual Property"],
-  ["affiliates", "10. Affiliate Programme"],
-  ["availability", "11. Availability and Changes"],
+const termsSections = [
+  ["who-we-are", "1. Who we are"],
+  ["account", "2. Eligibility and your account"],
+  ["service", "3. What Jissen Planner offers"],
+  ["plans", "4. Plans, prices and payment"],
+  ["cancellation-refunds", "5. Cancellation and refunds"],
+  ["ai", "6. Jissen AI (Premium)"],
+  ["acceptable-use", "7. Acceptable use"],
+  ["content", "8. Your content"],
+  ["intellectual-property", "9. Our intellectual property"],
+  ["affiliates", "10. Affiliate programme"],
+  ["availability", "11. Availability and changes"],
   ["disclaimers", "12. Disclaimers"],
-  ["liability", "13. Limitation of Liability"],
-  ["termination", "14. Suspension and Termination"],
+  ["liability", "13. Limitation of liability"],
+  ["termination", "14. Suspension and termination"],
   ["privacy", "15. Privacy"],
-  ["law", "16. Governing Law and Disputes"],
-  ["changes", "17. Changes to These Terms"],
+  ["law", "16. Governing law and disputes"],
+  ["changes", "17. Changes to these Terms"],
   ["general", "18. General"],
-  ["contact", "19. Contact Us"],
+  ["contact", "19. Contact us"],
+];
+
+const refundSections = [
+  ["refund-plans", "1. Plans covered"],
+  ["how-to-cancel", "2. How to cancel"],
+  ["when-you-cancel", "3. What happens when you cancel"],
+  ["seven-day-rule", "4. Refunds: the seven-day rule"],
+  ["no-refunds", "5. When we do not give refunds"],
+  ["upgrades-downgrades", "6. Upgrades and downgrades"],
+  ["request-refund", "7. How to request a refund"],
+  ["refund-payment", "8. How refunds are paid"],
+  ["affiliate-commissions", "9. Affiliate commissions"],
+  ["charge-problems", "10. Problems with a charge"],
+  ["legal-rights", "11. Your legal rights"],
+  ["refund-changes", "12. Changes to this policy"],
+  ["refund-contact", "13. Contact us"],
 ];
 
 function Section({ id, title, children }) {
@@ -32,7 +47,6 @@ function Section({ id, title, children }) {
       <h2 className="font-display text-3xl font-normal tracking-tight sm:text-4xl">
         {title}
       </h2>
-
       <div className="mt-5 space-y-4 text-sm leading-7 text-[#625C53]">
         {children}
       </div>
@@ -42,12 +56,42 @@ function Section({ id, title, children }) {
 
 function LegalLink({ to, children }) {
   return (
-    <Link
-      to={to}
-      className="text-[#8B714A] underline underline-offset-4"
-    >
+    <Link to={to} className="text-[#8B714A] underline underline-offset-4">
       {children}
     </Link>
+  );
+}
+
+function BulletList({ children }) {
+  return <ul className="list-disc space-y-2 pl-5">{children}</ul>;
+}
+
+function NumberList({ children }) {
+  return <ol className="list-decimal space-y-2 pl-5">{children}</ol>;
+}
+
+function ContactDetails() {
+  return (
+    <>
+      <p>
+        Email:{" "}
+        <a
+          href="mailto:jissenapp@gmail.com"
+          className="text-[#8B714A] underline underline-offset-4"
+        >
+          jissenapp@gmail.com
+        </a>
+      </p>
+      <p>
+        Phone:{" "}
+        <a
+          href="tel:+254726551492"
+          className="text-[#8B714A] underline underline-offset-4"
+        >
+          +254 726 551 492
+        </a>
+      </p>
+    </>
   );
 }
 
@@ -57,24 +101,23 @@ export default function Terms() {
       <header className="border-b border-[#25231F]/10">
         <div className="mx-auto max-w-[1100px] px-5 py-16 sm:px-8 sm:py-24 lg:px-14">
           <p className="text-xs uppercase tracking-[0.22em] text-[#8B714A]">
-            Lock-In / Legal
+            JISSEN PLANNER
           </p>
-
           <h1 className="mt-5 font-display text-6xl font-light leading-[0.95] sm:text-7xl lg:text-8xl">
-            Terms &amp;
+            Terms and
             <br />
             Conditions.
           </h1>
-
           <p className="mt-6 max-w-2xl text-sm leading-7 text-[#625C53] sm:text-base">
-            These Terms explain the rules that apply when you use
-            Lock-In, manage your plans, purchase a subscription or
-            use Lock-In AI.
+            These Terms and Conditions govern your use of the Jissen Planner
+            app, website and related services (the “Service”). Please read them
+            together with our Privacy Policy and Refund and Cancellation Policy.
+            By creating an account, subscribing or using the Service you agree
+            to these Terms.
           </p>
-
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-xs text-[#625C53]">
-            <span>Effective date: 15 October 2026</span>
-            <span>Last updated: 15 October 2026</span>
+            <span>Effective date: 11 October 2026</span>
+            <span>Last updated: 11 October 2026</span>
           </div>
         </div>
       </header>
@@ -84,9 +127,11 @@ export default function Terms() {
           <p className="text-xs uppercase tracking-[0.18em] text-[#8B714A]">
             On this page
           </p>
-
           <nav className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
-            {sections.map(([id, label]) => (
+            <p className="text-xs uppercase tracking-[0.18em] text-[#8B714A]">
+              Terms and Conditions
+            </p>
+            {termsSections.map(([id, label]) => (
               <a
                 key={id}
                 href={`#${id}`}
@@ -95,814 +140,589 @@ export default function Terms() {
                 {label}
               </a>
             ))}
+            <p className="mt-4 text-xs uppercase tracking-[0.18em] text-[#8B714A]">
+              Refund and Cancellation Policy
+            </p>
+            {refundSections.map(([id, label]) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                className="text-sm text-[#625C53] transition-colors hover:text-[#8B714A]"
+              >
+                {label}
+              </a>
+            ))}
+            <LegalLink to="/privacy">
+              <span className="mt-5 inline-block border-b border-[#8B714A] pb-1 no-underline">
+                Read our Privacy Policy →
+              </span>
+            </LegalLink>
           </nav>
-
-          <LegalLink to="/privacy">
-            <span className="mt-8 inline-block border-b border-[#8B714A] pb-1 no-underline">
-              Read our Privacy Policy →
-            </span>
-          </LegalLink>
         </aside>
 
         <article className="min-w-0">
-          <p className="mb-8 text-sm leading-7 text-[#625C53]">
-            These Terms and Conditions ("Terms") govern your access
-            to and use of the Lock-In application, website and related
-            services ("Service"). By creating an account, purchasing
-            a subscription or using the Service, you agree to these
-            Terms. If you do not agree, do not use the Service.
-          </p>
-
-          <Section id="who-we-are" title="1. Who We Are">
+          <Section id="who-we-are" title="1. Who we are">
             <p>
-              Lock-In is a personal planning and productivity service
-              operated by Sensation Marketing Agency ("Lock-In",
-              "we", "us" or "our").
-            </p>
-            <p>
-              You can contact us using the email address or telephone
-              number provided in the Contact Us section of these Terms.
+              Jissen Planner App is operated by a business registered in Kenya
+              under Registration No. BN-8DSZDKJM. In these Terms, “we”, “us” and
+              “our” mean that business.
             </p>
           </Section>
 
-          <Section id="account" title="2. Eligibility and Your Account">
-            <ul className="list-disc space-y-2 pl-5">
+          <Section id="account" title="2. Eligibility and your account">
+            <BulletList>
               <li>
-                You must be at least 18 years old to create an account
-                and independently enter into a subscription agreement
-                with us.
+                You must be 16 or over, or have the consent of a parent or
+                guardian.
               </li>
               <li>
-                You must provide accurate, current account information
-                and update it when necessary.
+                You must give us accurate information: your name, email address
+                and country.
               </li>
               <li>
-                You are responsible for maintaining the confidentiality
-                of your login credentials and for activity carried out
-                through your account.
+                You are responsible for everything that happens on your account
+                and for keeping your login details secure. Tell us straight away
+                if you suspect unauthorised use.
               </li>
-              <li>
-                Notify us promptly if you suspect unauthorised access
-                to your account.
-              </li>
-              <li>
-                Your account is for your personal use. You must not
-                sell, transfer, share or provide access to it in a way
-                that circumvents our account or subscription rules.
-              </li>
-              <li>
-                We may take reasonable steps to protect accounts,
-                investigate suspected misuse and prevent unauthorised
-                access.
-              </li>
-            </ul>
+              <li>Each account is for one person. Please do not share your account.</li>
+            </BulletList>
           </Section>
 
-          <Section id="service" title="3. What Lock-In Offers">
+          <Section id="service" title="3. What Jissen Planner offers">
             <p>
-              Lock-In helps you organise goals, plans, routines,
-              tasks, notes, self-care activities and personal reviews.
-              Available features depend on your subscription plan and
-              the features currently supported by the Service.
+              Jissen Planner is a productivity and planning app that helps you
+              set goals, break them into tasks, organise schedules, follow
+              through with reminders, and reflect on your progress. Depending on
+              your plan, it includes:
             </p>
-
+            <BulletList>
+              <li>
+                Both plans: reminders delivered as notifications on your device,
+                which you can turn off in the app settings or your device
+                settings.
+              </li>
+              <li>
+                Basic: planners, goals, tasks and schedules, task tracking,
+                self-care activities, and monthly ratings and reflections.
+              </li>
+              <li>
+                Premium: everything in Basic, plus the Jissen AI assistant: AI
+                chat and voice help with planning. The assistant works only if
+                you grant permission in the app.
+              </li>
+            </BulletList>
             <p>
-              <strong className="text-[#25231F]">Basic:</strong>{" "}
-              Core planning features, including vision and goal
-              planning, monthly planning, weekly planners, notes
-              and monthly reviews.
-            </p>
-
-            <p>
-              <strong className="text-[#25231F]">Premium:</strong>{" "}
-              Core planning features plus limited Lock-In AI
-              capabilities, which may include AI chat, voice
-              interactions and supported check-ins.
-            </p>
-
-            <p>
-              Email reminders and other convenience features are
-              available where supported. Their availability may
-              depend on your settings, permissions and the
-              functionality of the Service.
-            </p>
-
-            <p>
-              We may introduce new features, improve existing ones
-              or discontinue features when reasonably necessary.
-              Where a change materially affects a paid feature,
-              we will provide notice where reasonably practicable
-              and address any applicable subscription rights in
-              accordance with these Terms and the law.
+              We may add, change or remove features. If we remove a feature you
+              paid for in a way that materially reduces what you receive, we will
+              tell you and deal with it under our Refund and Cancellation Policy.
             </p>
           </Section>
 
-          <Section id="plans" title="4. Plans, Prices and Payment">
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[300px] border-collapse text-left text-sm">
-                <thead>
-                  <tr className="border-b border-[#25231F]/15">
-                    <th className="py-3 pr-4 font-medium text-[#25231F]">
-                      Plan
-                    </th>
-                    <th className="py-3 pr-4 font-medium text-[#25231F]">
-                      Price
-                    </th>
-                    <th className="py-3 font-medium text-[#25231F]">
-                      Includes
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr className="border-b border-[#25231F]/10">
-                    <td className="py-4 pr-4">Basic</td>
-                    <td className="whitespace-nowrap py-4 pr-4">
-                      KSh 300/month
-                    </td>
-                    <td className="py-4">
-                      Core planning features without AI chat or voice.
-                    </td>
-                  </tr>
-
-                  <tr className="border-b border-[#25231F]/10">
-                    <td className="py-4 pr-4">Premium</td>
-                    <td className="whitespace-nowrap py-4 pr-4">
-                      KSh 400/month
-                    </td>
-                    <td className="py-4">
-                      Core planning plus limited AI chat, voice
-                      and supported check-ins.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <ul className="list-disc space-y-2 pl-5">
+          <Section id="plans" title="4. Plans, prices and payment">
+            <p>
+              <strong className="text-[#25231F]">MONTHLY PLAN</strong>
+            </p>
+            <p>
+              Basic
+              <br />
+              Price: KES 300 per month
+              <br />
+              Includes: Core planning experience. No AI chat or voice.
+            </p>
+            <p>
+              Premium
+              <br />
+              Price: KES 400 per month
+              <br />
+              Includes: Core planning plus Jissen AI chat and voice.
+            </p>
+            <p>
+              <strong className="text-[#25231F]">YEARLY PLAN</strong>
+            </p>
+            <p>
+              Basic
+              <br />
+              Price: KES 3,000 for the whole year
+              <br />
+              Includes: Core planning experience. No AI chat or voice.
+            </p>
+            <p>
+              Premium
+              <br />
+              Price: KES 4,200 for the whole year
+              <br />
+              Includes: Core planning plus Jissen AI chat and voice.
+            </p>
+            <BulletList>
+              <li>Prices include applicable taxes.</li>
               <li>
-                Subscription prices are stated in Kenyan shillings
-                (KSh) and billed monthly unless a different billing
-                period is expressly shown at checkout.
+                You pay by M-Pesa or bank through the app. Payments are processed
+                by Pesapal. You must be authorised to use the number or payment
+                method you pay with.
+              </li>
+              <li>You renew subscriptions manually at the end of each period.</li>
+              <li>
+                If a payment fails, we may pause access to paid features after 7
+                days.
               </li>
               <li>
-                Subscriptions may renew automatically where recurring
-                billing is enabled. You can cancel before the next
-                renewal to prevent subsequent subscription charges.
-                Any applicable renewal details will be shown during
-                purchase or in your account.
+                If we change our prices, we will give you at least [30] days’
+                notice before the new price applies to your next renewal.
               </li>
-              <li>
-                Payments must be made using an available payment
-                method that you are authorised to use. The payment
-                methods supported for a transaction will be displayed
-                during checkout.
-              </li>
-              <li>
-                The final payable amount, including any applicable
-                taxes or additional charges, will be disclosed at
-                checkout before you confirm payment.
-              </li>
-              <li>
-                If a payment fails or a subscription expires, access
-                to paid features may be restricted until payment
-                succeeds or the subscription is renewed. We will
-                communicate relevant payment or access information
-                where supported.
-              </li>
-              <li>
-                If we change subscription prices, the revised price
-                will apply to new purchases and, after reasonable
-                advance notice of at least 30 days, to affected
-                subsequent renewals, subject to applicable law.
-              </li>
-              <li>
-                You are responsible for reviewing the plan,
-                price and billing terms presented before confirming
-                a purchase.
-              </li>
-            </ul>
+            </BulletList>
           </Section>
 
-          <Section id="refunds" title="5. Refunds and Cancellation">
+          <Section id="cancellation-refunds" title="5. Cancellation and refunds">
             <p>
-              You may cancel your subscription at any time. Where
-              cancellation is completed successfully, it stops future
-              renewals, and your paid access ordinarily continues
-              until the end of the current paid period unless access
-              is lawfully suspended or terminated for another reason.
-            </p>
-
-            <p>
-              You may request a refund within seven days of the
-              relevant subscription payment. After that period,
-              subscription payments are generally non-refundable,
-              except where a refund is required by applicable law
-              or is approved by us under an applicable refund policy.
-            </p>
-
-            <p>
-              A refund request is not automatically an approval.
-              We may need to verify the transaction, subscription
-              status and reason for the request before making a
-              decision.
-            </p>
-
-            <p>
-              To request a refund or ask about cancellation, contact
-              sensationmagency@gmail.com. Include the email address
-              associated with your account, the payment date and
-              the payment reference if available. Never send your
-              password or full payment-card details.
-            </p>
-
-            <p>
-              Approved refunds will ordinarily be returned through
-              the original payment method where supported. The time
-              required for the funds to appear depends on the payment
-              provider and financial institution.
-            </p>
-
-            <p>
-              Cancelling a subscription does not automatically delete
-              your account or planner content. Account deletion is a
-              separate action and is subject to our{" "}
-              <LegalLink to="/privacy">Privacy Policy</LegalLink>.
-            </p>
-
-            <p>
-              Nothing in these Terms removes consumer rights or
-              remedies that cannot lawfully be excluded under
-              Kenyan law.
+              You can cancel at any time and keep your access until the end of
+              the period you paid for. A subscription payment can be refunded
+              only if you ask within seven days of the payment. After seven days,
+              subscriptions cannot be refunded. The details are in our Refund
+              and Cancellation Policy, which forms part of these Terms.
             </p>
           </Section>
 
-          <Section id="ai" title="6. Lock-In AI">
-            <p>
-              Lock-In AI provides productivity and planning assistance.
-              Depending on the features available to you, it may help
-              with brainstorming, organising tasks, reviewing progress,
-              summarising information and suggesting ways to approach
-              your goals.
-            </p>
+          <Section id="ai" title="6. Jissen AI (Premium)">
+            <BulletList>
+              <li>
+                Jissen AI gives productivity support such as planning help,
+                summaries, outlines, reminders and suggestions. It is not
+                medical, psychological, legal, financial or other professional
+                advice.
+              </li>
+              <li>
+                When you use the AI, your chat text and the planner information
+                you ask about are sent to a third-party AI provider (OpenAI) to
+                generate a reply, as explained in our Privacy Policy.
+              </li>
+              <li>
+                When you ask it to, the AI can create, update, complete and
+                reschedule tasks in your planner. The app checks each change
+                before saving it. Please review changes made on your behalf.
+              </li>
+              <li>
+                AI replies can be inaccurate or incomplete. Check anything
+                important before you rely on it. We are not responsible for
+                decisions you make based on AI output.
+              </li>
+              <li>
+                The AI works only if you grant permission in the app. You can
+                withdraw that permission at any time in settings.
+              </li>
+              <li>Fair use: [reasonable-use limits on AI usage, e.g. messages per month].</li>
+              <li>The AI may sometimes be unavailable or interrupted.</li>
+            </BulletList>
+          </Section>
 
-            <p>
-              AI-generated responses may be inaccurate, incomplete,
-              misleading or outdated. You should review important
-              information and use your own judgement before acting
-              on suggestions.
-            </p>
+          <Section id="acceptable-use" title="7. Acceptable use">
+            <p>You agree not to:</p>
+            <BulletList>
+              <li>use Jissen Planner for anything unlawful or to harm others;</li>
+              <li>
+                hack, probe, scrape, copy or reverse engineer the app or its AI,
+                or upload malware;
+              </li>
+              <li>
+                use Jissen AI to create harassing, abusive or illegal content,
+                or try to get around usage limits;
+              </li>
+              <li>
+                share, sell or transfer your account, or pretend to be someone
+                else; or
+              </li>
+              <li>interfere with other people’s use of Jissen Planner.</li>
+            </BulletList>
+            <p>We may suspend or end accounts that break these rules.</p>
+          </Section>
 
+          <Section id="content" title="8. Your content">
             <p>
-              Lock-In AI is not a substitute for professional medical,
-              mental health, legal, financial or other specialist
-              advice. Do not rely on AI responses as the sole basis
-              for high-impact decisions.
-            </p>
-
-            <p>
-              Premium AI features are subject to usage allowances,
-              technical availability and any applicable limits
-              displayed in the Service. AI chat, voice and other
-              AI capabilities are not unlimited unless expressly
-              stated in the applicable plan details.
-            </p>
-
-            <p>
-              Additional AI usage, where offered, may be subject to
-              separate prices, credits or purchase terms. Any charge
-              must be presented before you confirm the relevant
-              purchase.
-            </p>
-
-            <p>
-              AI features may be unavailable due to maintenance,
-              service-provider interruptions, capacity constraints
-              or technical issues. We do not guarantee that every
-              AI request will receive a response or produce a
-              particular result.
-            </p>
-
-            <p>
-              Where an AI feature requires access to your planner
-              information, microphone or other device capability,
-              that feature will operate subject to the applicable
-              settings and permissions. You should only grant
-              permissions you are comfortable with.
+              The planners, goals, tasks, notes, reflections and other content
+              you create in Jissen Planner belong to you. We do not collect it.
+              It is stored on your behalf so that it syncs and is backed up, but
+              we cannot access it, we do not use it, and we claim no rights over
+              it, except as needed to provide the Service and the AI assistant
+              when you ask for it. You are responsible for what you write.
             </p>
           </Section>
 
-          <Section id="acceptable-use" title="7. Acceptable Use">
+          <Section id="intellectual-property" title="9. Our intellectual property">
             <p>
-              You agree to use Lock-In lawfully and responsibly.
-              You must not:
-            </p>
-
-            <ul className="list-disc space-y-2 pl-5">
-              <li>
-                Use the Service to violate applicable law or
-                infringe another person's rights.
-              </li>
-              <li>
-                Attempt to gain unauthorised access to accounts,
-                systems, infrastructure or data.
-              </li>
-              <li>
-                Introduce malware, interfere with the Service,
-                disrupt its operation or deliberately overload
-                its systems.
-              </li>
-              <li>
-                Scrape, harvest or collect information from the
-                Service through unauthorised means.
-              </li>
-              <li>
-                Reverse engineer, copy or circumvent technical
-                protections except to the extent that applicable
-                law expressly permits the activity.
-              </li>
-              <li>
-                Use AI features to facilitate unlawful activity,
-                harassment, abuse, fraud or the violation of
-                another person's rights.
-              </li>
-              <li>
-                Circumvent subscription charges, AI usage limits,
-                account restrictions or other security measures.
-              </li>
-              <li>
-                Impersonate another person, misrepresent your
-                identity or create accounts for deceptive purposes.
-              </li>
-              <li>
-                Sell, sublicense or commercially exploit the
-                Service without our written permission.
-              </li>
-            </ul>
-
-            <p>
-              We may investigate suspected violations and take
-              proportionate action, including restricting access
-              or suspending an account, subject to applicable law.
+              Jissen Planner, its software, design, name, logo and the content
+              we create belong to the registered business named in section 1.
+              While your account is in good standing we give you a personal,
+              non-exclusive, non-transferable, revocable right to use the app for
+              your own planning. These Terms do not transfer any ownership to you.
             </p>
           </Section>
 
-          <Section id="content" title="8. Your Content">
+          <Section id="affiliates" title="10. Affiliate programme">
             <p>
-              You retain the rights you hold in the goals, tasks,
-              notes, vision-board entries, plans and other material
-              you create or submit through Lock-In ("Your Content").
+              If you take part in the Jissen Planner affiliate programme, these
+              extra terms apply.
             </p>
-
-            <p>
-              You are responsible for Your Content, including
-              ensuring that you have the rights necessary to
-              submit it and that it does not violate applicable
-              law or another person's rights.
-            </p>
-
-            <p>
-              You grant us permission to host, store, process,
-              transmit and display Your Content only as reasonably
-              necessary to provide, maintain, secure and support
-              the Service, operate features you choose to use,
-              and comply with legal obligations.
-            </p>
-
-            <p>
-              Where you choose to use AI features, relevant
-              information may be processed to generate responses.
-              The processing of personal data and the use of
-              service providers are explained further in our{" "}
-              <LegalLink to="/privacy">Privacy Policy</LegalLink>.
-            </p>
-
-            <p>
-              You should avoid submitting passwords, payment-card
-              details or other sensitive information that is not
-              needed for your planning activities. Consider
-              exporting or retaining copies of important content
-              where the Service provides that functionality.
-            </p>
-
-            <p>
-              We do not acquire ownership of Your Content simply
-              because you use Lock-In. Any use of Your Content
-              remains subject to these Terms, the functionality
-              you choose to use and applicable privacy law.
-            </p>
+            <BulletList>
+              <li>
+                Application and vetting: you must apply and pass our vetting
+                process before you receive a referral code or link. We decide
+                who is approved, may ask for information to check your
+                suitability, and may decline or remove an affiliate at our
+                discretion.
+              </li>
+              <li>
+                Commission: on monthly plans, you earn 15% of each subscription
+                payment made by a user you referred, for the first three months
+                that user uses Jissen Planner. At current prices that is KES 45
+                per month on Basic and KES 60 per month on Premium. No commission
+                is paid after those three months.
+              </li>
+              <li>
+                Yearly plans: on yearly plans, you earn 8% of the yearly
+                subscription payment made by a user you referred. At current
+                prices that is KES 240 on Basic and KES 336 on Premium, paid
+                once for that payment.
+              </li>
+              <li>
+                A commission is earned once the payment has cleared and the
+                seven-day refund window in our Refund and Cancellation Policy
+                has passed.
+              </li>
+              <li>
+                If a subscription is refunded, charged back or found to be
+                fraudulent, the commission on it is cancelled, and any amount
+                already paid may be deducted from future payouts.
+              </li>
+              <li>
+                Commissions are paid by M-Pesa or bank account monthly, with a
+                minimum payout of KES 200.
+              </li>
+              <li>No self-referrals, fake sign-ups or incentivised sign-ups that are not genuine users.</li>
+              <li>
+                No spam or misleading claims, and no promoting features that are
+                not yet available.
+              </li>
+              <li>
+                You are an independent promoter, not our employee, agent or
+                partner, and you are responsible for your own taxes.
+              </li>
+              <li>
+                We may change commission rates for future referrals with [30]
+                days’ notice, and may end your participation if you break these
+                terms.
+              </li>
+            </BulletList>
           </Section>
 
-          <Section
-            id="intellectual-property"
-            title="9. Our Intellectual Property"
-          >
+          <Section id="availability" title="11. Availability and changes">
             <p>
-              The Lock-In name, branding, logos, software, interface,
-              visual design, written materials and other elements
-              of the Service are owned by or licensed to their
-              respective rights holders and are protected by
-              applicable intellectual property laws.
-            </p>
-
-            <p>
-              Subject to these Terms and your active subscription
-              where one is required, we grant you a limited,
-              personal, non-exclusive, non-transferable and
-              revocable licence to use the Service for your
-              personal planning and productivity activities.
-            </p>
-
-            <p>
-              You may not copy, distribute, modify, sell or create
-              derivative works from our protected materials except
-              with our permission or where applicable law permits.
-            </p>
-
-            <p>
-              These Terms do not transfer ownership of our
-              intellectual property to you. Any rights not
-              expressly granted remain with their respective
-              owners or licensors.
-            </p>
-          </Section>
-
-          <Section id="affiliates" title="10. Affiliate Programme">
-            <p>
-              Lock-In may offer an affiliate programme that rewards
-              approved participants for referring eligible paying
-              subscribers. Participation is subject to approval,
-              these Terms and any additional programme rules
-              communicated to affiliates.
-            </p>
-
-            <ul className="list-disc space-y-2 pl-5">
-              <li>
-                Applicants must receive approval before promoting
-                Lock-In as an affiliate or receiving access to
-                affiliate referral tools.
-              </li>
-              <li>
-                Approved affiliates earn a commission of 15% of
-                each eligible subscription payment made by a user
-                they refer, for that user's first three monthly
-                payments.
-              </li>
-              <li>
-                At the listed subscription prices, this equals
-                KSh 45 per eligible Basic payment or KSh 60 per
-                eligible Premium payment.
-              </li>
-              <li>
-                Commission is earned only after the relevant
-                payment has cleared and the seven-day refund
-                request period has passed, provided the transaction
-                remains eligible under the programme rules.
-              </li>
-              <li>
-                Commissions associated with refunded, reversed,
-                charged-back, fraudulent or otherwise ineligible
-                transactions may be withheld or reversed. Where
-                lawful, amounts already paid may be offset against
-                future commissions.
-              </li>
-              <li>
-                Affiliate payouts are made through M-Pesa using
-                verified payout details. The applicable payout
-                schedule and any minimum payout threshold will
-                be communicated to approved affiliates through
-                the programme's applicable instructions.
-              </li>
-              <li>
-                Self-referrals, fake accounts, misleading referrals
-                and attempts to manipulate the commission system
-                are prohibited.
-              </li>
-              <li>
-                Affiliates must not spam, make deceptive claims,
-                promise unavailable features or represent
-                themselves as employees or authorised agents
-                of Lock-In.
-              </li>
-              <li>
-                Affiliates participate independently and are
-                responsible for their own tax and legal obligations.
-                Participation does not create an employment,
-                partnership or agency relationship.
-              </li>
-              <li>
-                We may change commission rates for future eligible
-                referrals with at least 30 days' notice. We may
-                suspend or end participation for fraud, material
-                violations or other legitimate programme reasons.
-              </li>
-            </ul>
-          </Section>
-
-          <Section id="availability" title="11. Availability and Changes">
-            <p>
-              We aim to provide a reliable Service, but we do not
-              guarantee uninterrupted, continuous or error-free
-              operation.
-            </p>
-
-            <p>
-              Access may be affected by maintenance, software
-              updates, internet connectivity, device limitations,
-              third-party providers, security incidents or
-              circumstances beyond our reasonable control.
-            </p>
-
-            <p>
-              We may update, maintain or modify the Service.
-              Where a change materially affects paid functionality,
-              we will provide reasonable notice where practicable
-              and comply with applicable legal obligations.
-            </p>
-
-            <p>
-              We are not responsible for interruptions caused
-              entirely by your device, network, internet service
-              provider or third-party services outside our
-              reasonable control, subject to rights that cannot
-              lawfully be excluded.
+              We aim to keep Jissen Planner available, but we cannot promise it
+              will be uninterrupted or error-free. We may carry out maintenance,
+              change or discontinue features, or suspend the Service. We will
+              give reasonable notice of significant changes where we can.
             </p>
           </Section>
 
           <Section id="disclaimers" title="12. Disclaimers">
             <p>
-              Lock-In is a planning and productivity tool. It can
-              help you organise activities and reflect on progress,
-              but we do not guarantee that you will achieve a
-              particular goal, improve productivity or obtain
-              a specific personal or professional outcome.
-            </p>
-
-            <p>
-              To the extent permitted by applicable law, the
-              Service is provided according to its availability
-              and current functionality. We do not warrant that
-              every feature will always be available, compatible
-              with every device or free from errors.
-            </p>
-
-            <p>
-              You remain responsible for your decisions, plans
-              and actions, including how you use AI-generated
-              information.
-            </p>
-
-            <p>
-              Nothing in these Terms excludes any statutory
-              guarantee, consumer right or remedy that cannot
-              lawfully be excluded.
+              Jissen Planner is provided “as is” and “as available”. It is a
+              planning, productivity tool, and we do not guarantee any particular
+              result, such as achieving your goals or becoming more productive,
+              although it is designed to help you work towards them.
             </p>
           </Section>
 
-          <Section id="liability" title="13. Limitation of Liability">
+          <Section id="liability" title="13. Limitation of liability">
             <p>
-              To the extent permitted by applicable law, we are
-              not liable for indirect, incidental, special or
-              consequential losses arising from your use of,
-              or inability to use, the Service.
-            </p>
-
-            <p>
-              We are not responsible for losses arising from
-              inaccurate information you provide, your failure
-              to protect your account credentials, your decisions
-              based on AI-generated responses or interruptions
-              caused by circumstances outside our reasonable
-              control, except where applicable law provides
-              otherwise.
-            </p>
-
-            <p>
-              You are responsible for maintaining appropriate
-              copies of important information where the Service
-              offers export or backup functionality. We do not
-              guarantee that information will be available
-              indefinitely or recoverable in every circumstance.
-            </p>
-
-            <p>
-              Nothing in these Terms excludes or limits liability
-              for fraud, fraudulent misrepresentation, wilful
-              misconduct or any other liability that cannot
-              lawfully be excluded or limited. These Terms do
-              not restrict consumer rights or remedies available
-              under applicable Kenyan law.
+              To the extent permitted by Kenyan law, we are not liable for
+              indirect or consequential loss, or for loss of data, profit or
+              opportunity arising from your use of the Service. Our total
+              liability to you for any claim is limited to the amount you paid
+              us in the [3] months before the claim arose. Nothing in these
+              Terms excludes or limits liability that cannot be excluded by law,
+              or your rights as a consumer under the Consumer Protection Act,
+              2012.
             </p>
           </Section>
 
-          <Section id="termination" title="14. Suspension and Termination">
+          <Section id="termination" title="14. Suspension and termination">
             <p>
-              You may stop using Lock-In at any time. You may
-              cancel your subscription and request account
-              deletion using the available account controls
-              or by contacting us.
-            </p>
-
-            <p>
-              We may restrict, suspend or terminate access where
-              reasonably necessary because of a material breach
-              of these Terms, suspected fraud, unlawful activity,
-              security risks, non-payment or a legal requirement.
-            </p>
-
-            <p>
-              Where reasonably practicable and legally permitted,
-              we will provide notice and an opportunity to address
-              the issue before taking action. Immediate restrictions
-              may be necessary to protect users, the Service or
-              our systems.
-            </p>
-
-            <p>
-              If your access ends, your permission to use the
-              affected features ends. Any refund entitlement
-              will be determined under these Terms and applicable
-              law.
-            </p>
-
-            <p>
-              Account termination and subscription cancellation
-              are separate matters unless the Service expressly
-              combines them. Deletion and retention of personal
-              data are governed by our{" "}
-              <LegalLink to="/privacy">Privacy Policy</LegalLink>.
-            </p>
-
-            <p>
-              Provisions that by their nature should continue
-              after termination, including those relating to
-              intellectual property, liability, disputes and
-              governing law, will continue to apply to the
-              extent permitted by law.
+              You can stop using Jissen Planner and request permanent deletion
+              of your account in the app at any time. We may suspend or end your
+              access for breach of these Terms, fraud, non-payment or legal
+              reasons, giving notice where reasonable. When your access ends,
+              your right to use Jissen Planner ends too. The parts of these
+              Terms that are meant to continue, such as intellectual property,
+              limitation of liability and governing law, will continue.
             </p>
           </Section>
 
           <Section id="privacy" title="15. Privacy">
             <p>
-              Our{" "}
-              <LegalLink to="/privacy">Privacy Policy</LegalLink>
-              {" "}explains how we collect, use, store, disclose
-              and protect personal data in connection with
-              Lock-In.
-            </p>
-
-            <p>
-              By using the Service, you acknowledge that personal
-              data will be handled as described in that policy
-              and in accordance with applicable data protection
-              law.
-            </p>
-
-            <p>
-              Please read the Privacy Policy to understand your
-              rights, the purposes for which information is
-              processed and how to contact us about privacy
-              matters.
+              Our Privacy Policy explains how we handle your personal data and
+              forms part of these Terms.
             </p>
           </Section>
 
-          <Section id="law" title="16. Governing Law and Disputes">
+          <Section id="law" title="16. Governing law and disputes">
             <p>
-              These Terms are governed by the laws of Kenya,
-              subject to any mandatory legal protections that
-              apply to you.
-            </p>
-
-            <p>
-              If you have a concern or dispute, please contact
-              us first at sensationmagency@gmail.com so we can
-              try to resolve the matter fairly and promptly.
-            </p>
-
-            <p>
-              Contacting us does not prevent you from exercising
-              your statutory rights, making a complaint to a
-              competent authority or pursuing any other remedy
-              available under applicable law.
-            </p>
-
-            <p>
-              Any dispute that cannot be resolved informally
-              may be referred to a court or other competent
-              body in Kenya with jurisdiction over the matter,
-              subject to applicable law.
+              These Terms are governed by the laws of Kenya. If you have a
+              problem, please contact us first at jissenapp@gmail.com so we can
+              try to resolve it. If it is not resolved, the parties will try
+              mediation before going to court. The courts of Kenya have
+              jurisdiction over any dispute.
             </p>
           </Section>
 
-          <Section id="changes" title="17. Changes to These Terms">
+          <Section id="changes" title="17. Changes to these Terms">
             <p>
-              We may update these Terms to reflect changes to
-              Lock-In, our features, payment arrangements, legal
-              obligations or business practices.
-            </p>
-
-            <p>
-              When a change is material, we will provide notice
-              through the Service, by email or through another
-              reasonable communication method before it takes
-              effect, where practicable or required by law.
-            </p>
-
-            <p>
-              The updated version will display its effective
-              date. If you do not agree to a material change,
-              you may stop using the Service and cancel your
-              subscription before the change takes effect.
-            </p>
-
-            <p>
-              Where applicable law requires express consent
-              to a change, we will obtain that consent rather
-              than relying solely on continued use.
+              We may update these Terms. We will tell you about important
+              changes in the app or by email before they take effect. If you
+              keep using Jissen Planner after the change takes effect, you
+              accept the updated Terms. If you do not agree, you can cancel
+              before then.
             </p>
           </Section>
 
           <Section id="general" title="18. General">
             <p>
-              These Terms and the Privacy Policy govern your
-              use of Lock-In, together with any additional
-              terms clearly presented when you purchase or
-              use a specific feature.
-            </p>
-
-            <p>
-              If any provision of these Terms is found invalid
-              or unenforceable, the remaining provisions will
-              continue to apply to the extent permitted by law.
-            </p>
-
-            <p>
-              A failure or delay in exercising a right under
-              these Terms does not automatically waive that
-              right.
-            </p>
-
-            <p>
-              You may not transfer your account or assign your
-              rights or obligations under these Terms without
-              our consent. We may transfer our rights and
-              obligations where permitted by law, provided
-              that doing so does not unlawfully reduce your
-              rights.
-            </p>
-
-            <p>
-              These Terms do not create an employment,
-              partnership, joint venture or agency relationship
-              between you and us.
+              These Terms, together with our Privacy Policy and Refund and
+              Cancellation Policy, are the whole agreement between you and us
+              about Jissen Planner. If any part is found to be invalid, the rest
+              stays in effect. If we do not enforce a right straight away, we
+              have not given it up. You may not transfer your account to someone
+              else.
             </p>
           </Section>
 
-          <Section id="contact" title="19. Contact Us">
-            <p>
-              If you have questions about these Terms,
-              subscriptions, cancellations or the operation
-              of Lock-In, you can reach us using the details
-              below.
+          <Section id="contact" title="19. Contact us">
+            <ContactDetails />
+          </Section>
+
+          <header className="border-t border-[#25231F]/10 py-8 sm:py-10">
+            <p className="text-xs uppercase tracking-[0.22em] text-[#8B714A]">
+              JISSEN PLANNER
             </p>
-
-            <div className="border border-[#25231F]/10 p-5">
+            <h2 className="mt-4 font-display text-4xl font-light leading-tight sm:text-5xl">
+              Refund and Cancellation Policy
+            </h2>
+            <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-xs text-[#625C53]">
+              <span>Effective date: 11 October 2026</span>
+              <span>Last updated: 11 October 2026</span>
+            </div>
+            <div className="mt-5 space-y-4 text-sm leading-7 text-[#625C53]">
               <p>
-                <strong className="text-[#25231F]">Lock-In</strong>
-              </p>
-
-              <p>Operated by Sensation Marketing Agency</p>
-
-              <p>
-                Email:{" "}
-                <a
-                  href="mailto:sensationmagency@gmail.com"
-                  className="text-[#8B714A] underline underline-offset-4"
-                >
-                  sensationmagency@gmail.com
-                </a>
-              </p>
-
-              <p>
-                Phone / WhatsApp:{" "}
-                <a
-                  href="https://wa.me/254797983216"
-                  className="text-[#8B714A] underline underline-offset-4"
-                >
-                  +254 797 983216
-                </a>
+                This policy explains how to cancel a Jissen Planner subscription
+                and when you can get a refund. It forms part of our Terms and
+                Conditions.
               </p>
             </div>
+          </header>
+
+          <Section id="refund-plans" title="1. Plans covered">
+            <p>
+              This policy applies to Jissen Planner Basic and Jissen Planner
+              Premium, on both monthly and yearly plans:
+            </p>
+            <p>
+              <strong className="text-[#25231F]">MONTHLY PLAN</strong>
+              <br />
+              Basic: KES 300
+              <br />
+              Premium: KES 400
+            </p>
+            <p>
+              <strong className="text-[#25231F]">YEARLY PLAN</strong>
+              <br />
+              Basic: KES 3,000
+              <br />
+              Premium: KES 4,200
+            </p>
+            <p>
+              In short: cancel any time and keep your access until the end of
+              the period you paid for. A subscription payment can be refunded
+              only if you ask within seven days of the payment. After seven
+              days, subscriptions cannot be refunded.
+            </p>
           </Section>
 
-          <div className="border-t border-[#25231F]/10 pt-8">
-            <p className="text-sm leading-7 text-[#625C53]">
-              By using Lock-In, you acknowledge these Terms.
-              Please also review our{" "}
-              <LegalLink to="/privacy">Privacy Policy</LegalLink>
-              {" "}for information about personal data and privacy.
+          <Section id="how-to-cancel" title="2. How to cancel">
+            <NumberList>
+              <li>In the app, choose Cancel subscription and confirm.</li>
+              <li>
+                Or email jissenapp@gmail.com from your registered email address,
+                with the M-Pesa number or payment method you pay with.
+              </li>
+            </NumberList>
+            <p>We will confirm your cancellation [by email / in the app].</p>
+          </Section>
+
+          <Section id="when-you-cancel" title="3. What happens when you cancel">
+            <BulletList>
+              <li>Your subscription will not renew, so you will not be charged again.</li>
+              <li>You keep access to your plan until the end of the period you have already paid for.</li>
+              <li>Cancelling does not by itself give you a refund. Refunds follow the seven-day rule below.</li>
+              <li>
+                When the period ends, your account moves to [no paid access /
+                read-only access]. You can resubscribe at any time.
+              </li>
+              <li>
+                If you cancel Premium but want to keep Basic, your plan changes
+                to Basic at the end of the period.
+              </li>
+              <li>
+                You can request permanent deletion of your account in the app at
+                any time, as described in our Privacy Policy.
+              </li>
+            </BulletList>
+          </Section>
+
+          <Section id="seven-day-rule" title="4. Refunds: the seven-day rule">
+            <p>
+              The seven days count from the date of the payment. If you ask for a
+              refund within seven days of a payment, we will refund it in the
+              situations below. This applies to every subscription payment,
+              monthly or yearly, including renewals.
             </p>
-          </div>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[300px] border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-b border-[#25231F]/15">
+                    <th className="py-3 pr-4 font-medium text-[#25231F]">
+                      Situation
+                    </th>
+                    <th className="py-3 font-medium text-[#25231F]">
+                      What we do
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">You change your mind</td>
+                    <td className="py-4">Full refund</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Duplicate or incorrect charge, such as being charged twice
+                      for the same period or the wrong amount
+                    </td>
+                    <td className="py-4">Full refund of the extra or incorrect amount</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      You paid but your plan was not activated and we cannot fix it
+                    </td>
+                    <td className="py-4">Full refund</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Unauthorised payment: you did not make or approve it
+                    </td>
+                    <td className="py-4">Refund after verification</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              After seven days, we do not refund subscription payments,
+              including for unused time. This does not affect your rights under
+              Kenyan consumer law.
+            </p>
+          </Section>
+
+          <Section id="no-refunds" title="5. When we do not give refunds">
+            <BulletList>
+              <li>Any request made more than seven days after the payment.</li>
+              <li>
+                The unused or partly used part of a period after you cancel,
+                including the remainder of a yearly plan.
+              </li>
+              <li>
+                Paying for a renewal by mistake, if more than seven days have
+                passed since the renewal payment. Renewals are made manually, so
+                you will not be charged unless you choose to pay.
+              </li>
+              <li>Accounts suspended or ended for breaking our Terms and Conditions.</li>
+              <li>Not achieving your goals, or finding AI replies unhelpful or inaccurate.</li>
+              <li>
+                Fees charged by your mobile money provider or bank, unless the
+                charge was caused by our error.
+              </li>
+            </BulletList>
+          </Section>
+
+          <Section id="upgrades-downgrades" title="6. Upgrades and downgrades">
+            <BulletList>
+              <li>Upgrading from Basic to Premium takes effect immediately.</li>
+              <li>
+                Downgrading from Premium to Basic takes effect at the end of your
+                current period. There is no refund for the difference.
+              </li>
+            </BulletList>
+          </Section>
+
+          <Section id="request-refund" title="7. How to request a refund">
+            <p>
+              Email jissenapp@gmail.com within seven days of the payment, from
+              your registered email address, and include:
+            </p>
+            <BulletList>
+              <li>your name and account email;</li>
+              <li>the M-Pesa phone number or payment method used to pay;</li>
+              <li>the M-Pesa transaction code or payment reference, and the date; and</li>
+              <li>the reason for your request.</li>
+            </BulletList>
+            <p>
+              We will acknowledge your request within [2 business days] and give
+              you a decision within [5 business days]. A request made within the
+              seven days is treated as made in time even if we finish processing
+              it after the seven days.
+            </p>
+          </Section>
+
+          <Section id="refund-payment" title="8. How refunds are paid">
+            <p>
+              Approved refunds are sent to the M-Pesa number or payment method
+              used to pay, through our payment provider, Pesapal, usually within
+              [3 to 7 business days] of approval. We will tell you by email once
+              it has been sent. If a refund cannot go to the original number or
+              method, we will agree an alternative with you.
+            </p>
+          </Section>
+
+          <Section id="affiliate-commissions" title="9. Affiliate commissions">
+            <p>
+              If a subscription is refunded or reversed, the commission paid or
+              due on it is cancelled, as set out in the affiliate programme
+              terms in our Terms and Conditions.
+            </p>
+          </Section>
+
+          <Section id="charge-problems" title="10. Problems with a charge">
+            <p>
+              If something looks wrong with a charge, please contact us first so
+              we can fix it quickly. If you ask your mobile money provider or
+              bank to reverse a valid charge without speaking to us, we may need
+              to suspend your account while it is investigated.
+            </p>
+          </Section>
+
+          <Section id="legal-rights" title="11. Your legal rights">
+            <p>
+              This policy does not affect your rights under Kenyan consumer law,
+              including the Consumer Protection Act, 2012.
+            </p>
+          </Section>
+
+          <Section id="refund-changes" title="12. Changes to this policy">
+            <p>
+              We may update this policy. Changes apply to purchases made after
+              the updated date shown at the top.
+            </p>
+          </Section>
+
+          <Section id="refund-contact" title="13. Contact us">
+            <ContactDetails />
+          </Section>
         </article>
       </div>
     </main>

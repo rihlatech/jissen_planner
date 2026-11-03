@@ -1,19 +1,19 @@
-
 import { Link } from "react-router-dom";
 
 const sections = [
-  ["controller", "1. Who Is Responsible"],
-  ["information", "2. Information We Handle"],
-  ["use", "3. How Information Is Used"],
-  ["ai", "4. AI Features"],
-  ["payments", "5. Payments"],
-  ["sharing", "6. When Information Is Shared"],
-  ["retention", "7. Data Retention"],
-  ["security", "8. Security"],
-  ["rights", "9. Your Choices and Rights"],
-  ["children", "10. Children's Privacy"],
-  ["changes", "11. Changes to This Policy"],
-  ["contact", "12. Contact Us"],
+  ["who-we-are", "1. Who we are"],
+  ["collect", "2. What we collect"],
+  ["planner-content", "3. Your planner content stays with you"],
+  ["use", "4. How and why we use your data"],
+  ["reminders-ai", "5. Reminders and the AI assistant"],
+  ["sharing", "6. Who we share your data with"],
+  ["transfers", "7. Transfers outside Kenya"],
+  ["retention", "8. How long we keep your data"],
+  ["rights", "9. Your rights"],
+  ["security", "10. How we protect your data"],
+  ["children", "11. Children and students"],
+  ["changes", "12. Changes to this policy"],
+  ["contact", "13. Contact us"],
 ];
 
 function Section({ id, title, children }) {
@@ -50,7 +50,7 @@ export default function Privacy() {
       <header className="border-b border-[#25231F]/10">
         <div className="mx-auto max-w-[1100px] px-5 py-16 sm:px-8 sm:py-24 lg:px-14">
           <p className="text-xs uppercase tracking-[0.22em] text-[#8B714A]">
-            Lock-In / Legal
+            JISSEN PLANNER
           </p>
 
           <h1 className="mt-5 font-display text-6xl font-light leading-[0.95] sm:text-7xl lg:text-8xl">
@@ -60,13 +60,17 @@ export default function Privacy() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-sm leading-7 text-[#625C53] sm:text-base">
-            How Lock-In handles your personal information when you manage
-            your account, use the planner, or access AI-powered features.
+            This Privacy Policy explains what personal data Jissen Planner
+            collects, why we collect it, how we use and protect it, and the
+            choices and rights you have. We process personal data in line with
+            the Data Protection Act, 2019 of Kenya and its regulations. By
+            creating an account or using Jissen Planner you confirm that you
+            have read this policy.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-xs text-[#625C53]">
-            <span>Effective date: 15 October 2026</span>
-            <span>Last updated: 15 October 2026</span>
+            <span>Effective date: 11th October 2026</span>
+            <span>Last updated: 11th October 2026</span>
           </div>
         </div>
       </header>
@@ -98,420 +102,334 @@ export default function Privacy() {
         </aside>
 
         <article className="min-w-0">
-          <p className="mb-8 text-sm leading-7 text-[#625C53]">
-            This Privacy Policy explains how Lock-In collects, uses, stores,
-            and protects personal information in connection with its planning
-            and productivity services. Lock-In is operated by Sensation
-            Marketing Agency, a registered business. By using the Service,
-            you acknowledge that your information may be handled as described
-            in this Policy, subject to your rights under applicable law.
-          </p>
-
-          <Section id="controller" title="1. Who Is Responsible">
+          <Section id="who-we-are" title="1. Who we are">
             <p>
-              Sensation Marketing Agency is responsible for the operation
-              of Lock-In and for handling privacy enquiries relating to
-              the Service.
-            </p>
-
-            <p>
-              If you have a question about your personal information, wish
-              to exercise a privacy right, or have a concern about how your
-              information is handled, you can contact us using the details
-              provided in the Contact Us section below.
-            </p>
-
-            <p>
-              This Policy is intended to be read alongside the Lock-In
-              Terms &amp; Conditions.
+              Jissen Planner is operated by a business registered in Kenya under
+              Registration No. BN-8DSZDKJM, based in Nairobi, Kenya. We are the
+              data controller for the personal data described in this policy.
+              Our data protection contact is the Jissen Planner team, reachable
+              at jissenapp@gmail.com or +254 726 551 492.
             </p>
           </Section>
 
-          <Section id="information" title="2. Information We Handle">
+          <Section id="collect" title="2. What we collect">
             <p>
-              The information associated with your use of Lock-In depends
-              on the features you access and the information you choose
-              to provide. It may include the following categories:
+              In short: we collect your account opening details and basic
+              payment and support records. We do not collect your planner
+              content, and we do not sell your data.
             </p>
 
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong className="text-[#25231F]">
-                  Account information:
-                </strong>{" "}
-                your name, email address, account identifier, country
-                or region, and information used to authenticate and
-                maintain your account.
+                Account data: your name, email address and country, and the
+                profile and appearance preferences you set.
               </li>
-
               <li>
-                <strong className="text-[#25231F]">
-                  Planner information:
-                </strong>{" "}
-                goals, tasks, schedules, notes, vision-board entries,
-                progress reviews, self-care activities, preferences,
-                and other content you choose to save.
+                AI assistant data: only if you use the AI assistant, the chat
+                messages you send it and the planner information you choose to
+                ask it about. It is sent to OpenAI to produce your reply and is
+                not stored or kept by us.
               </li>
-
               <li>
-                <strong className="text-[#25231F]">
-                  AI interactions:
-                </strong>{" "}
-                prompts, messages, responses, and related information
-                processed when you use AI-powered planning, recommendations,
-                progress insights, or voice features.
+                Subscription and payment records: your plan, payment dates and
+                status, and the M-Pesa transaction reference. We never see or
+                store your M-Pesa PIN. Payments are processed by Pesapal.
               </li>
-
               <li>
-                <strong className="text-[#25231F]">
-                  Subscription and transaction information:
-                </strong>{" "}
-                your subscription plan, account status, payment confirmations,
-                transaction references, amounts, purchase history, and
-                information needed to manage billing or resolve payment
-                disputes.
+                Affiliate data (affiliates only): your referral code, the
+                sign-ups and subscriptions linked to it, your payout details
+                such as your M-Pesa number, and the information we ask for when
+                we vet your application.
               </li>
-
               <li>
-                <strong className="text-[#25231F]">
-                  Technical and usage information:
-                </strong>{" "}
-                technical logs, diagnostic information, and information
-                about interactions with the Service where generated or
-                collected by the systems used to operate it.
-              </li>
-
-              <li>
-                <strong className="text-[#25231F]">
-                  Communications:
-                </strong>{" "}
-                information you provide when contacting support, reporting
-                a problem, or making a privacy request.
+                Communications: messages you send to our support channels.
               </li>
             </ul>
 
             <p>
-              Please provide only information that is relevant to your
-              planning needs. Avoid including passwords, payment credentials,
-              or sensitive personal information that is unnecessary for
-              the feature you are using.
+              We do not collect your goals, tasks, schedules, reminders,
+              self-care records, ratings or reflections (see section 3). Voice
+              input uses your device’s own speech recognition and text-to-speech
+              services. We do not receive your voice recordings.
             </p>
           </Section>
 
-          <Section id="use" title="3. How Information Is Used">
+          <Section
+            id="planner-content"
+            title="3. Your planner content stays with you"
+          >
             <p>
-              Personal information may be used for the following purposes:
+              The planners, goals, tasks, notes, self-care records, ratings and
+              reflections you create in Jissen Planner are yours. We do not
+              collect them. They are saved on your device, and a copy is stored
+              in our secure cloud service so that your data syncs and is not
+              lost if you change your device.
             </p>
 
-            <ul className="list-disc space-y-2 pl-5">
-              <li>Create, authenticate, and maintain your account.</li>
-              <li>Save, organise, and display your planner content.</li>
-              <li>Provide scheduling, progress tracking, and other requested features.</li>
-              <li>Deliver AI-powered assistance and related functionality.</li>
-              <li>Manage subscriptions, process payment confirmations, and handle billing enquiries.</li>
-              <li>Maintain the reliability, functionality, and security of the Service.</li>
-              <li>Investigate suspected fraud, misuse, or violations of the Terms &amp; Conditions.</li>
-              <li>Respond to enquiries and provide customer support.</li>
-              <li>Meet applicable legal, regulatory, and record-keeping obligations.</li>
-            </ul>
-
             <p>
-              We handle personal information for purposes connected to
-              providing and managing Lock-In, meeting legal obligations,
-              protecting the Service, and other lawful purposes that apply
-              to the relevant processing activity.
+              We store this content on your behalf, but we cannot access it and
+              we do not read or use it for any purpose, including advertising,
+              analytics or training AI models. The only exception is
+              information you choose to ask the AI assistant about, which is
+              handled as described in section 5.
             </p>
           </Section>
 
-          <Section id="ai" title="4. AI Features">
-            <p>
-              Lock-In may provide AI-powered features such as planning
-              assistance, progress insights, smart recommendations,
-              agent actions, and voice interactions. These features use
-              information relevant to your request to generate responses
-              or perform the functions you initiate.
-            </p>
-
-            <p>
-              When an AI feature uses an external AI service provider,
-              relevant prompts, messages, contextual planner information,
-              or voice-related data may be transmitted to that provider
-              for processing. The information involved depends on the
-              feature you choose to use.
-            </p>
-
-            <p>
-              AI-generated responses may be incomplete, inaccurate, or
-              unsuitable for your circumstances. You should review
-              suggestions before acting on them. AI features are intended
-              to support your planning and productivity, not to replace
-              your own judgement or qualified professional advice.
-            </p>
-
-            <p>
-              Where AI conversation history or related memory is saved
-              within Lock-In, it may be used to maintain context and
-              improve continuity across your interactions. You remain
-              responsible for the information you choose to share.
-              Available memory controls can be used to manage or remove
-              saved AI-related information.
-            </p>
-
-            <p>
-              Voice features may process audio and associated conversation
-              data to provide spoken interactions. The handling of audio,
-              transcripts, and related records depends on the feature and
-              the services used to deliver it.
-            </p>
-
-            <p>
-              Do not use AI features to submit passwords, payment card
-              details, or sensitive information that is not necessary
-              for your request.
-            </p>
-          </Section>
-
-          <Section id="payments" title="5. Payments">
-            <p>
-              Lock-In offers paid subscription plans and may provide
-              additional paid features or usage packages. The available
-              prices, included features, usage allowances, and renewal
-              terms are presented through the relevant purchase flow.
-            </p>
-
-            <p>
-              Payment transactions are handled through the payment
-              methods and providers made available at checkout. Those
-              providers may process payment information under their own
-              privacy policies and applicable terms.
-            </p>
-
-            <p>
-              Lock-In may receive transaction references, payment status,
-              amounts, timestamps, subscription details, and other
-              information needed to confirm purchases, manage access,
-              address failed payments, process refunds, and maintain
-              appropriate financial records.
-            </p>
-
-            <p>
-              Do not send payment card details, account passwords, or
-              other payment credentials through planner notes, AI chats,
-              or support messages.
-            </p>
-          </Section>
-
-          <Section id="sharing" title="6. When Information Is Shared">
-            <p>
-              Personal information may be processed by service providers
-              where necessary to operate, maintain, and support Lock-In.
-              Depending on the feature, these may include providers of
-              hosting, databases, authentication, payment processing,
-              AI services, communications, and technical infrastructure.
-            </p>
-
-            <p>
-              Information may also be disclosed where required by law,
-              pursuant to a lawful request, or where reasonably necessary
-              to investigate suspected fraud, enforce the Terms &amp;
-              Conditions, protect users, or safeguard the rights and
-              security of the Service.
-            </p>
-
-            <p>
-              Where a service provider processes personal information on
-              our behalf, access should be limited to what is reasonably
-              necessary for its role and subject to applicable contractual
-              and legal requirements.
-            </p>
-
-            <p>
-              Some providers may process information in countries outside
-              Kenya. Where personal information is transferred across
-              borders, the transfer must be handled in accordance with
-              applicable data protection requirements.
-            </p>
-
-            <p>
-              We do not treat your personal planner content as public
-              content merely because you save it in Lock-In. Information
-              is shared as necessary for the operation of the Service,
-              as described in this Policy, or where otherwise permitted
-              or required by law.
-            </p>
-          </Section>
-
-          <Section id="retention" title="7. Data Retention">
-            <p>
-              Personal information is retained for as long as reasonably
-              necessary for the purposes for which it was collected,
-              including providing the Service, maintaining your account,
-              managing subscriptions, resolving disputes, preventing
-              misuse, and meeting applicable legal obligations.
-            </p>
-
-            <p>
-              If you request account deletion, we will handle the request
-              in accordance with the applicable deletion process and
-              relevant legal requirements. Deletion may remove account
-              information and associated planner content, subject to
-              information that must be retained or that remains temporarily
-              in protected backups.
-            </p>
-
-            <p>
-              Certain transaction records or other information may need
-              to be retained for legal, accounting, security, or dispute
-              resolution purposes. Where retention is required, the
-              information should not be kept for longer than the applicable
-              purpose or legal requirement permits.
-            </p>
-
-            <p>
-              Information retained in backups may not be removed immediately
-              when information is deleted from active systems. Access to
-              retained information remains subject to appropriate safeguards
-              and applicable requirements.
-            </p>
-          </Section>
-
-          <Section id="security" title="8. Security">
-            <p>
-              We take reasonable measures designed to protect personal
-              information against unauthorised access, disclosure,
-              alteration, loss, and destruction.
-            </p>
-
-            <p>
-              Security also depends on how you use the Service. Keep your
-              login credentials confidential, use a secure device, and
-              notify us promptly if you suspect unauthorised access to
-              your account.
-            </p>
-
-            <p>
-              No online service or method of electronic storage can be
-              guaranteed to be completely secure. We cannot promise
-              that every security risk can be eliminated, but personal
-              information should be handled with safeguards appropriate
-              to the nature of the information and the risks involved.
-            </p>
-
-            <p>
-              Where a personal data breach occurs, it will be handled
-              in accordance with applicable legal and regulatory
-              requirements.
-            </p>
-          </Section>
-
-          <Section id="rights" title="9. Your Choices and Rights">
-            <p>
-              Subject to applicable law and the circumstances of your
-              request, you may have the right to:
-            </p>
-
-            <ul className="list-disc space-y-2 pl-5">
-              <li>Be informed about how your personal information is used.</li>
-              <li>Request access to personal information held about you.</li>
-              <li>Request correction of inaccurate or incomplete information.</li>
-              <li>Request deletion of personal information where legally applicable.</li>
-              <li>Object to or request restriction of certain processing where applicable.</li>
-              <li>Withdraw consent where processing relies on consent, without affecting the lawfulness of earlier processing.</li>
-              <li>Raise a complaint with the relevant data protection authority.</li>
-            </ul>
-
-            <p>
-              You can also use the account and feature controls made
-              available in Lock-In to manage your information, preferences,
-              and AI-related memory. The controls available may depend
-              on the feature.
-            </p>
-
-            <p>
-              To make a privacy request, email{" "}
-              <ContactLink href="mailto:sensationmagency@gmail.com">
-                sensationmagency@gmail.com
-              </ContactLink>{" "}
-              or contact us by phone or WhatsApp at{" "}
-              <ContactLink href="https://wa.me/254797983216">
-                +254 797 983216
-              </ContactLink>.
-            </p>
-
-            <p>
-              We may need to verify your identity before processing a
-              request. Some information may need to be retained, and
-              certain requests may be limited, where permitted or required
-              by applicable law.
-            </p>
-          </Section>
-
-          <Section id="children" title="10. Children's Privacy">
-            <p>
-              Lock-In is intended for individuals aged 18 and over.
-              We do not knowingly seek to collect children's personal
-              information in circumstances where doing so would violate
-              applicable law.
-            </p>
-
-            <p>
-              If you believe a child has provided personal information
-              in circumstances that are not permitted, please contact
-              us. We will review the concern and take appropriate action
-              in accordance with applicable law.
-            </p>
-          </Section>
-
-          <Section id="changes" title="11. Changes to This Policy">
-            <p>
-              This Privacy Policy may be updated from time to time to
-              reflect changes to Lock-In, its features, information
-              handling practices, or applicable legal requirements.
-            </p>
-
-            <p>
-              Where a change is material, we will take reasonable steps
-              to communicate it through the Service, by email, or through
-              another appropriate channel where required by law.
-            </p>
-
-            <p>
-              The effective date and last-updated date at the top of
-              this page identify the version currently published.
-              Continued use of Lock-In after an update is subject to
-              the revised Policy to the extent permitted by applicable law.
-            </p>
-          </Section>
-
-          <Section id="contact" title="12. Contact Us">
-            <div className="border border-[#25231F]/10 p-5">
-              <p>
-                <strong className="text-[#25231F]">Lock-In</strong>
-              </p>
-
-              <p>
-                Operated by Sensation Marketing Agency
-              </p>
-
-              <p>
-                Email:{" "}
-                <ContactLink href="mailto:sensationmagency@gmail.com">
-                  sensationmagency@gmail.com
-                </ContactLink>
-              </p>
-
-              <p>
-                Phone / WhatsApp:{" "}
-                <ContactLink href="https://wa.me/254797983216">
-                  +254 797 983216
-                </ContactLink>
-              </p>
+          <Section id="use" title="4. How and why we use your data">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[600px] border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-b border-[#25231F]/15">
+                    <th className="py-3 pr-4 font-medium text-[#25231F]">
+                      Purpose
+                    </th>
+                    <th className="py-3 pr-4 font-medium text-[#25231F]">
+                      Data used
+                    </th>
+                    <th className="py-3 font-medium text-[#25231F]">
+                      Legal basis
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">Create and manage your account</td>
+                    <td className="py-4 pr-4">Account data</td>
+                    <td className="py-4">Contract</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Store your planner content so it syncs and is backed up
+                      (we do not access it)
+                    </td>
+                    <td className="py-4 pr-4">
+                      Your planner content, stored on your behalf
+                    </td>
+                    <td className="py-4">Contract</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Process subscriptions, renewals, refunds and receipts
+                    </td>
+                    <td className="py-4 pr-4">
+                      Account data, subscription and payment records
+                    </td>
+                    <td className="py-4">Contract; legal obligation</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Send reminders as notifications on your device
+                    </td>
+                    <td className="py-4 pr-4">Reminder times and text you set</td>
+                    <td className="py-4">Consent</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Send service messages such as receipts, security alerts
+                      and changes to our terms
+                    </td>
+                    <td className="py-4 pr-4">Name, email address</td>
+                    <td className="py-4">Contract; legitimate interests</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Provide the AI assistant, only if you grant permission in
+                      the app
+                    </td>
+                    <td className="py-4 pr-4">
+                      Chat text and planner information you ask about
+                    </td>
+                    <td className="py-4">Consent</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Keep Jissen Planner secure and prevent fraud
+                    </td>
+                    <td className="py-4 pr-4">Account data, payment records</td>
+                    <td className="py-4">Legitimate interests</td>
+                  </tr>
+                  <tr className="border-b border-[#25231F]/10">
+                    <td className="py-4 pr-4">
+                      Run the affiliate programme, vet applicants and pay
+                      commissions
+                    </td>
+                    <td className="py-4 pr-4">Affiliate data</td>
+                    <td className="py-4">Contract; legal obligation</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pr-4">
+                      Comply with the law and respond to lawful requests
+                    </td>
+                    <td className="py-4 pr-4">Relevant data</td>
+                    <td className="py-4">Legal obligation</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <p>
-              Please include enough information for us to understand
-              your enquiry, but do not send passwords, payment credentials,
-              or unnecessary sensitive personal information.
+              Where we rely on your consent or permission, such as for reminders
+              or the AI assistant, you can withdraw it at any time in the app
+              settings or by contacting us. Withdrawing does not affect
+              processing that took place before. We send marketing messages only
+              if you opt in.
+            </p>
+          </Section>
+
+          <Section id="reminders-ai" title="5. Reminders and the AI assistant">
+            <p>
+              Reminders are scheduled on your device and delivered through your
+              device’s notification system. You can turn them off in the app
+              settings or in your device settings.
+            </p>
+
+            <p>
+              The Jissen Planner AI assistant offers chat and voice help with
+              planning. It works only if you grant permission in the app, and
+              you can withdraw that permission at any time. When you use it,
+              your chat text and the planner information you ask about are sent
+              to OpenAI to generate a reply. The request passes through our
+              secure server function only to be relayed to OpenAI and back to
+              you. We do not store, keep or read it, and we do not use it for
+              advertising or to train AI models.
+            </p>
+
+            <p>
+              When you ask it to, the assistant can create, update, complete and
+              reschedule tasks. Each change is checked by the app’s planner
+              service before it is saved.
+            </p>
+
+            <p>
+              AI replies can be wrong, so please read them critically. The AI
+              is not a substitute for professional medical, legal, financial or
+              mental-health advice.
+            </p>
+          </Section>
+
+          <Section id="sharing" title="6. Who we share your data with">
+            <p>We do not sell your personal data. We share it only with:</p>
+
+            <ul className="list-disc space-y-2 pl-5">
+              <li>
+                Service providers who help us run Jissen Planner, under written
+                agreements that require them to protect your data: Supabase
+                (sign-in, account database and server functions), Pesapal
+                (payment processing), OpenAI (AI assistant), and website
+                hosting (Vercel).
+              </li>
+              <li>
+                Affiliates: if you subscribe using an affiliate’s referral
+                code, the affiliate is told only that a sign-up or subscription
+                happened under their code. They do not see your name or email.
+              </li>
+              <li>Authorities, regulators or courts where the law requires it.</li>
+              <li>
+                A buyer or successor: if Jissen Planner or its operating
+                business is sold or restructured. They must honour this policy.
+              </li>
+            </ul>
+          </Section>
+
+          <Section id="transfers" title="7. Transfers outside Kenya">
+            <p>
+              Some of our service providers store or process data outside
+              Kenya. When we transfer personal data abroad we do so in line
+              with the Data Protection Act, 2019, using safeguards such as
+              contracts that require an adequate level of protection, or with
+              your consent where required.
+            </p>
+          </Section>
+
+          <Section id="retention" title="8. How long we keep your data">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>
+                Account data and stored planner content: for as long as your
+                account is active.
+              </li>
+              <li>
+                After you delete your account: you can request permanent
+                deletion of your account in the app. We then delete or
+                anonymise your account data within [30] days, except for what
+                we must keep by law. Your stored planner content is deleted
+                with your account, and content on your device is removed when
+                you delete the app or clear its data.
+              </li>
+            </ul>
+          </Section>
+
+          <Section id="rights" title="9. Your rights">
+            <p>Under the Data Protection Act, 2019 you have the right to:</p>
+
+            <ul className="list-disc space-y-2 pl-5">
+              <li>be informed about how we use your personal data;</li>
+              <li>access the personal data we hold about you;</li>
+              <li>
+                object to or restrict certain processing, including direct
+                marketing;
+              </li>
+              <li>have inaccurate or incomplete data corrected;</li>
+              <li>have your data deleted;</li>
+              <li>withdraw your consent or permission at any time; and</li>
+              <li>
+                receive a copy of the personal data you gave us in a usable
+                format.
+              </li>
+            </ul>
+
+            <p>
+              To use any of these rights, email{" "}
+              <ContactLink href="mailto:jissenapp@gmail.com">
+                jissenapp@gmail.com
+              </ContactLink>{" "}
+              or use the account settings in the app. We will respond within
+              the time the law allows.
+            </p>
+          </Section>
+
+          <Section id="security" title="10. How we protect your data">
+            <p>
+              We use measures such as encrypted connections, access controls
+              limited to people who need them, secure storage with trusted
+              providers, and regular reviews. No system is completely secure,
+              so please protect your login details and tell us straight away if
+              you think someone has accessed your account. If a personal data
+              breach affects you, we will notify you and the relevant
+              authorities as the law requires.
+            </p>
+          </Section>
+
+          <Section id="children" title="11. Children and students">
+            <p>
+              Jissen Planner is intended for people aged 16 and over. Users
+              under 16 require parent or guardian consent and permission. If we
+              learn that we hold a child’s data without the required consent,
+              we will delete it.
+            </p>
+          </Section>
+
+          <Section id="changes" title="12. Changes to this policy">
+            <p>
+              We may update this policy from time to time. We will post the new
+              version in the app and on our website and, for important changes,
+              tell you by email or in the app. The date at the top shows when
+              it was last updated.
+            </p>
+          </Section>
+
+          <Section id="contact" title="13. Contact us">
+            <p>
+              Email:{" "}
+              <ContactLink href="mailto:jissenapp@gmail.com">
+                jissenapp@gmail.com
+              </ContactLink>
+            </p>
+
+            <p>
+              Phone or WhatsApp:{" "}
+              <ContactLink href="https://wa.me/254726551492">
+                +254 726 551 492
+              </ContactLink>
             </p>
           </Section>
 

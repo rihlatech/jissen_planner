@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import PageLayout from "./layouts/PageLayout";
@@ -11,6 +10,7 @@ import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import FAQ from "./pages/FAQ";
+import Affiliates from "./pages/Affiliates";
 
 export default function App() {
   return (
@@ -26,6 +26,7 @@ export default function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/affiliates" element={<Affiliates />} />
         </Routes>
       </PageLayout>
     </BrowserRouter>

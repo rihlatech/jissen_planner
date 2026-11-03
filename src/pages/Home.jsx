@@ -53,7 +53,7 @@ const features = [
     label: "AI ASSISTANCE",
     title: "Find clarity when you need it.",
     description:
-      "Explore planning assistance, progress insights, and recommendations through AI chat and voice, subject to your available usage allowance.",
+      "Explore planning assistance, progress insights, and recommendations through Jissen AI chat and voice.",
   },
   {
     number: "04",
@@ -108,32 +108,34 @@ const aiBenefits = [
     number: "04",
     title: "Choose how you interact",
     description:
-      "Use AI chat or voice, subject to the features and usage limits of your plan.",
+      "Use Jissen AI chat or voice to think through your plans.",
   },
 ];
 
 const plans = [
   {
     name: "Basic",
-    price: "300",
+    monthlyPrice: "300",
+    yearlyPrice: "3,000",
     description: "A focused planning experience for your everyday life.",
     features: [
       "Core planning experience",
       "Goals and daily tasks",
       "Routines and self-care",
       "Progress and reflection",
+      "No AI chat or voice",
     ],
     highlighted: false,
   },
   {
     name: "Premium",
-    price: "400",
-    description: "The core planner, with AI-assisted planning.",
+    monthlyPrice: "400",
+    yearlyPrice: "4,200",
+    description: "The core planner, with Jissen AI chat and voice.",
     features: [
       "Everything in Basic",
-      "AI chat assistance",
-      "AI voice features",
-      "AI usage within defined limits",
+      "Jissen AI chat",
+      "Jissen AI voice",
     ],
     highlighted: true,
   },
@@ -247,7 +249,7 @@ export default function Home() {
                 to="/releases"
                 className="inline-flex items-center gap-5 bg-[#F8F4ED] px-6 py-4 text-sm text-[#25231F] transition-colors duration-300 hover:bg-[#E3C795]"
               >
-                Explore Lock-In
+                Explore Jissen Planner
                 <span aria-hidden="true">↗</span>
               </Link>
 
@@ -277,7 +279,7 @@ export default function Home() {
         className="scroll-mt-10 mx-auto grid max-w-[1440px] gap-8 px-5 py-20 sm:px-8 sm:py-28 md:grid-cols-[0.7fr_1.3fr] md:gap-16 lg:px-14 lg:py-36"
       >
         <Reveal>
-          <SectionLabel>The Lock-In philosophy</SectionLabel>
+          <SectionLabel>The Jissen Planner philosophy</SectionLabel>
         </Reveal>
 
         <Reveal delay={0.08}>
@@ -292,8 +294,8 @@ export default function Home() {
           <div className="mt-8 grid gap-6 sm:grid-cols-2 sm:gap-10">
             <p className="text-sm leading-7 text-[#625C53] sm:text-base sm:leading-8">
               Big ambitions can feel distant when every day is filled with
-              smaller demands. Lock-In helps you connect the bigger picture
-              with the actions you can take today.
+              smaller demands. Jissen Planner helps you connect the bigger
+              picture with the actions you can take today.
             </p>
 
             <p className="text-sm leading-7 text-[#625C53] sm:text-base sm:leading-8">
@@ -444,7 +446,7 @@ export default function Home() {
       <section className="bg-[#25231F] text-[#F8F4ED]">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 sm:py-28 md:grid-cols-[1.05fr_0.95fr] md:items-center lg:px-14 lg:py-32">
           <Reveal>
-            <SectionLabel light>Lock-In AI · Premium</SectionLabel>
+            <SectionLabel light>Jissen AI · Premium</SectionLabel>
 
             <h2 className="font-display mt-6 max-w-2xl text-4xl font-light leading-[1.02] sm:text-6xl md:text-7xl">
               A little more clarity when you need it.
@@ -452,7 +454,7 @@ export default function Home() {
 
             <p className="mt-7 max-w-xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
               Sometimes the next step is easier to find when you can talk
-              things through. Lock-In AI is designed to help you think about
+              things through. Jissen AI is designed to help you think about
               your plans, reflect on your progress, and explore what to do
               next.
             </p>
@@ -461,13 +463,12 @@ export default function Home() {
               to="/releases#whats-included"
               className="mt-8 inline-flex items-center gap-4 border border-[#D6BB8B]/60 px-6 py-4 text-sm transition-colors duration-300 hover:bg-[#F8F4ED] hover:text-[#25231F]"
             >
-              Explore planned AI features
+              Explore Jissen AI
               <span aria-hidden="true">↗</span>
             </Link>
 
             <p className="mt-5 max-w-lg text-xs leading-6 text-white/45">
-              AI features and usage allowances depend on the selected plan and
-              final release configuration.
+              Jissen AI chat and voice are included with the Premium plan.
             </p>
           </Reveal>
 
@@ -515,19 +516,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Proposed pricing */}
+      {/* Pricing */}
       <section className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 sm:py-28 lg:px-14 lg:py-32">
         <Reveal>
-          <SectionLabel>Simple proposed pricing</SectionLabel>
+          <SectionLabel>Simple pricing</SectionLabel>
 
           <div className="mt-6 grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-end">
             <h2 className="font-display max-w-3xl text-4xl font-light leading-[1.02] sm:text-6xl md:text-7xl">
-              Find your way to Lock-In.
+              Find your Jissen Planner plan.
             </h2>
 
             <p className="max-w-lg text-sm leading-7 text-[#625C53] md:justify-self-end sm:text-base">
-              Start with the core planning experience, or explore the proposed
-              Premium plan for AI-assisted planning.
+              Choose the core planning experience or add Jissen AI chat and
+              voice with Premium.
             </p>
           </div>
         </Reveal>
@@ -554,14 +555,29 @@ export default function Home() {
                   )}
                 </div>
 
-                <p className="font-display mt-5 text-5xl font-light sm:text-6xl">
-                  KSh {plan.price}
-                  <span className="ml-2 font-sans text-sm text-[#625C53]">
-                    / month
-                  </span>
-                </p>
+                <div className="mt-5 grid gap-5 border-b border-[#25231F]/15 pb-6 sm:grid-cols-2">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-[#8B714A]">
+                      Monthly
+                    </p>
+                    <p className="font-display mt-2 text-4xl font-light sm:text-5xl">
+                      KES {plan.monthlyPrice}
+                    </p>
+                    <p className="mt-1 text-sm text-[#625C53]">per month</p>
+                  </div>
 
-                <p className="mt-4 max-w-md text-sm leading-7 text-[#625C53]">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-[#8B714A]">
+                      Yearly
+                    </p>
+                    <p className="font-display mt-2 text-4xl font-light sm:text-5xl">
+                      KES {plan.yearlyPrice}
+                    </p>
+                    <p className="mt-1 text-sm text-[#625C53]">per year</p>
+                  </div>
+                </div>
+
+                <p className="mt-5 max-w-md text-sm leading-7 text-[#625C53]">
                   {plan.description}
                 </p>
 
@@ -598,10 +614,17 @@ export default function Home() {
           ))}
         </div>
 
-        <p className="mt-5 max-w-3xl text-xs leading-6 text-[#625C53]">
-          These are proposed prices, not a confirmation that subscriptions
-          are available. Final pricing, included features, usage allowances,
-          and billing terms will be confirmed before launch.
+        <p className="mt-7 text-sm leading-7 text-[#625C53]">
+          Prices include applicable taxes. Subscriptions renew manually at the
+          end of each period, and you can cancel any time. Refunds are available
+          only when requested within seven days of payment. See our{" "}
+          <Link
+            to="/terms#refund-plans"
+            className="text-[#8B714A] underline underline-offset-4"
+          >
+            Refund and Cancellation Policy
+          </Link>
+          .
         </p>
       </section>
 
@@ -612,12 +635,12 @@ export default function Home() {
             <SectionLabel>Good questions deserve clear answers</SectionLabel>
 
             <h2 className="font-display mt-5 max-w-3xl text-3xl font-light leading-tight sm:text-5xl">
-              Want to know more before you lock in?
+              Want to know more about Jissen Planner?
             </h2>
 
             <p className="mt-4 max-w-2xl text-sm leading-7 text-[#625C53] sm:text-base">
               Learn more about the product, AI check-ins, privacy, payments,
-              and the Lock-In affiliate programme.
+              and the Jissen Planner affiliate programme.
             </p>
           </Reveal>
 
@@ -645,8 +668,8 @@ export default function Home() {
 
             <div className="mt-9 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <p className="max-w-xl text-sm leading-7 text-[#625C53] sm:text-base sm:leading-8">
-                Lock-In V1.0.0 is coming soon. Explore the planned experience
-                and follow the journey toward launch.
+                Jissen Planner V1.0.0 is coming soon. Explore the planned
+                experience and follow the journey toward launch.
               </p>
 
               <Link
@@ -659,7 +682,7 @@ export default function Home() {
             </div>
 
             <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 border-t border-[#25231F]/15 pt-6">
-              <ArrowLink to="/about">About Lock-In</ArrowLink>
+              <ArrowLink to="/about">About Jissen Planner</ArrowLink>
               <ArrowLink to="/releases">Release notes</ArrowLink>
               <ArrowLink to="/faq">FAQs</ArrowLink>
               <ArrowLink to="/contact">Get in touch</ArrowLink>

@@ -1,33 +1,33 @@
-
 import { useState } from "react";
 
 const sections = [
   {
-    title: "About Lock In",
+    title: "About Jissen Planner",
     questions: [
       {
-        question: "Who is Lock In for?",
+        question: "Who is Jissen Planner for?",
         answer:
-          "Students, professionals, entrepreneurs and anyone focused on personal growth. If you want to be more organised and follow through on your goals, it's for you.",
+          "Students, entrepreneurs, professionals and anyone focused on personal growth. Jissen Planner helps you turn your goals into daily action.",
       },
       {
         question: "Do you see my goals and notes?",
         answer:
-          "No. We only collect your name, email address and country. We don't collect, see or use the content you write in the app.",
+          "Your planner content is saved on your device and a copy is stored in our secure cloud service so your data can sync. We cannot access it, read it or use it. Information you choose to ask the AI assistant about is handled as described in our Privacy Policy.",
       },
       {
         question: "Will the AI contact me without asking?",
         answer:
-          "No. The AI checks in only if you've given permission, and you can turn it off at any time. Reminders are sent to you by email.",
+          "No. Jissen AI works only if you grant permission in the app, and you can withdraw that permission at any time. Reminders are scheduled on your device and delivered through your device’s notification system. You can turn them off in the app or device settings.",
       },
       {
         question: "Can I cancel or get a refund?",
         answer:
-          "You can cancel any time and keep access until the end of the period you paid for. Refund requests must be made within seven days of the payment.",
+          "You can cancel at any time and keep access until the end of the period you paid for. Refund requests must be made within seven days of the payment. See the Refund and Cancellation Policy on our Terms page for details.",
       },
       {
         question: "How do I pay?",
-        answer: "You pay by M-Pesa.",
+        answer:
+          "You pay by M-Pesa or bank through the app. Payments are processed by Pesapal.",
       },
     ],
   },
@@ -35,39 +35,69 @@ const sections = [
     title: "Affiliate programme",
     questions: [
       {
-        question: "How do I become an affiliate?",
+        question: "What is the Jissen Planner affiliate programme?",
         answer:
-          "Apply using the button on the affiliate page. We'll ask about you and your audience, review your application, and send your referral code and link if you're approved.",
+          "It lets you earn a commission by sharing Jissen Planner with other people. When someone subscribes using your referral code or link, you earn a share of their payment.",
       },
       {
-        question: "How much do I earn?",
+        question: "Who can apply?",
         answer:
-          "15% of each payment from each person you refer, for the first three months they use Lock In. At current prices that's KSh 45 per payment on Basic and KSh 60 on Premium.",
+          "Anyone who can honestly promote Jissen Planner to a real audience, such as students, content creators, community leaders, coaches and professionals. All applications are reviewed before approval.",
       },
       {
-        question: "When do I get paid?",
+        question: "How much will I earn?",
         answer:
-          "Commission is confirmed once the payment has cleared and the seven-day refund window has passed. You're paid by M-Pesa, and we share the payout schedule when you're approved.",
+          "On monthly plans you earn 15% of each payment for the first three months of each person you refer. That is KES 45 per month on Basic and KES 60 per month on Premium. On yearly plans you earn 8% of the yearly payment, which is KES 240 on Basic and KES 336 on Premium.",
       },
       {
-        question: "What if someone I referred gets a refund?",
+        question: "How do I apply?",
         answer:
-          "The commission on that payment is cancelled. Refunds are only available within seven days of a payment.",
+          "Fill in the application form on the Affiliates page. It’s free, and you will only be asked for payout details after you are approved.",
       },
       {
-        question: "What if they cancel?",
+        question: "How does the approval process work?",
         answer:
-          "You earn on the payments they make in their first three months. Once they stop paying, there are no more payments to earn on.",
+          "We review your application, may ask for more information, and then email you our decision. If you are approved, you receive your unique referral code and link. We decide who is approved and may decline an application.",
       },
       {
-        question: "Can I see who signed up?",
+        question: "How long does approval take?",
         answer:
-          "You'll see that a sign-up happened under your link, but not the person's name or email. We keep our users' details private.",
+          "We usually reply within [number] business days. If we need more information, we will email you.",
       },
       {
-        question: "Can I refer myself?",
+        question: "When is my commission earned?",
         answer:
-          "No. Self-referrals and fake sign-ups aren't allowed and can lead to removal from the programme.",
+          "Commission is earned once the referred person’s payment has cleared and the 7-day refund period has passed.",
+      },
+      {
+        question: "When and how do I get paid?",
+        answer:
+          "Commission is paid monthly by M-Pesa or bank transfer. The minimum payout is KES 200.",
+      },
+      {
+        question: "What happens if a person I referred gets a refund?",
+        answer:
+          "If a subscription is refunded, charged back or found to be fraudulent, the commission on it is cancelled. If you have already been paid, the amount may be deducted from future payouts.",
+      },
+      {
+        question: "Can I see who signed up using my code?",
+        answer:
+          "You can see that a sign-up or subscription happened under your code, but not the person’s name, email or any planner content. This protects our users’ privacy.",
+      },
+      {
+        question: "Can I refer myself or use paid ads or incentives?",
+        answer:
+          "No. Self-referrals, fake sign-ups, spam, misleading claims and incentivised sign-ups that are not genuine users are not allowed. Affiliates who break the rules can be removed.",
+      },
+      {
+        question: "Am I employed by Jissen Planner?",
+        answer:
+          "No. Affiliates are independent promoters, not employees, agents or partners, and are responsible for their own taxes.",
+      },
+      {
+        question: "Who can I contact with questions?",
+        answer:
+          "Email jissenapp@gmail.com or call +254 726 551 492.",
       },
     ],
   },
@@ -89,8 +119,8 @@ export default function FAQ() {
           </h1>
 
           <p className="mt-6 max-w-xl text-sm leading-7 text-[#625C53] sm:text-base sm:leading-8">
-            Quick answers about Lock-In, your subscription, and the affiliate
-            programme.
+            Quick answers about Jissen Planner, subscriptions, privacy, and the
+            affiliate programme.
           </p>
         </div>
       </section>
@@ -122,9 +152,7 @@ export default function FAQ() {
                     <button
                       type="button"
                       aria-expanded={isOpen}
-                      onClick={() =>
-                        setOpenQuestion(isOpen ? null : id)
-                      }
+                      onClick={() => setOpenQuestion(isOpen ? null : id)}
                       className="flex w-full items-center justify-between gap-5 py-5 text-left"
                     >
                       <span className="text-sm font-medium sm:text-base">
@@ -161,12 +189,25 @@ export default function FAQ() {
           </p>
 
           <h2 className="font-display mt-4 text-4xl font-light sm:text-5xl">
-            Let's help you find clarity.
+            Let’s help you find clarity.
           </h2>
 
           <p className="mt-5 max-w-xl text-sm leading-7 text-[#625C53]">
-            If you need more information about Lock-In or the affiliate
-            programme, get in touch with the team.
+            Email{" "}
+            <a
+              href="mailto:jissenapp@gmail.com"
+              className="text-[#8B714A] underline underline-offset-4"
+            >
+              jissenapp@gmail.com
+            </a>{" "}
+            or call{" "}
+            <a
+              href="tel:+254726551492"
+              className="text-[#8B714A] underline underline-offset-4"
+            >
+              +254 726 551 492
+            </a>
+            .
           </p>
         </div>
       </section>

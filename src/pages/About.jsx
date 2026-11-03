@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const principles = [
@@ -26,32 +25,29 @@ export default function About() {
   return (
     <main className="bg-[#F8F4ED] text-[#25231F]">
       {/* Hero */}
-      
-{/* Hero */}
-<section className="px-5 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-32 lg:px-14">
-  <p className="text-xs uppercase tracking-[0.22em] text-[#8B714A]">
-    About Lock-In
-  </p>
+      <section className="px-5 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-32 lg:px-14">
+        <p className="text-xs uppercase tracking-[0.22em] text-[#8B714A]">
+          About Jissen Planner
+        </p>
 
-  <h1 className="font-display mt-6 max-w-5xl text-6xl font-light leading-[0.95] sm:text-8xl lg:text-[9rem]">
-    Your goals deserve
-    <br />
-    <span className="text-[#8B714A]">more than good intentions.</span>
-  </h1>
+        <h1 className="font-display mt-6 max-w-5xl text-6xl font-light leading-[0.95] sm:text-8xl lg:text-[9rem]">
+          Your goals deserve
+          <br />
+          <span className="text-[#8B714A]">more than good intentions.</span>
+        </h1>
 
-  <div className="mt-10 grid gap-8 border-t border-[#D9D0C1] pt-7 md:grid-cols-[1fr_2fr] md:gap-16">
-    <p className="text-xs uppercase tracking-[0.18em] text-[#8B714A]">
-      A more intentional way to plan
-    </p>
+        <div className="mt-10 grid gap-8 border-t border-[#D9D0C1] pt-7 md:grid-cols-[1fr_2fr] md:gap-16">
+          <p className="text-xs uppercase tracking-[0.18em] text-[#8B714A]">
+            A more intentional way to plan
+          </p>
 
-    <p className="max-w-2xl text-sm leading-8 text-[#625C53] sm:text-base">
-      Lock-In brings your goals, plans, routines, and reflection into one
-      personal planning experience — helping you turn intentions into
-      consistent action.
-    </p>
-  </div>
-</section>
-
+          <p className="max-w-2xl text-sm leading-8 text-[#625C53] sm:text-base">
+            Jissen Planner brings your goals, plans, routines, and reflection
+            into one personal planning experience — helping you turn intentions
+            into consistent action.
+          </p>
+        </div>
+      </section>
 
       {/* Brand statement */}
       <section className="bg-[#25231F] px-5 py-20 text-[#F8F4ED] sm:px-8 sm:py-28 lg:px-14">
@@ -70,9 +66,9 @@ export default function About() {
 
           <p className="max-w-xl text-sm leading-8 text-[#D0C9BE] sm:text-base">
             Having goals is one thing. Making space for them in everyday life
-            is another. Lock-In is designed around the connection between
-            long-term direction and daily action, giving you a place to plan,
-            stay organised, and reflect on how things are going.
+            is another. Jissen Planner is designed around the connection
+            between long-term direction and daily action, giving you a place to
+            plan, stay organised, and reflect on how things are going.
           </p>
         </div>
       </section>
@@ -129,8 +125,8 @@ export default function About() {
             </h2>
 
             <p className="mt-5 max-w-xl text-sm leading-7 text-[#625C53] sm:text-base">
-              Follow the progress of Lock-In as we work towards its public
-              release.
+              Follow the progress of Jissen Planner as we work towards its
+              public release.
             </p>
           </div>
 

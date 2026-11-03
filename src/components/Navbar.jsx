@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
@@ -9,6 +8,7 @@ const links = [
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
   { label: "FAQs", to: "/faq" },
+  { label: "Affiliates", to: "/affiliates" },
 ];
 
 export default function Navbar() {
@@ -34,11 +34,11 @@ export default function Navbar() {
           className="group flex shrink-0 flex-col"
         >
           <span className="font-display text-3xl font-light leading-none tracking-wide text-[#25231F]">
-            LOCK<span className="text-[#8B714A]">-</span>IN
+            JISSEN
           </span>
-          {/* <span className="mt-1 text-[8px] uppercase tracking-[0.24em] text-[#8B714A]">
-            Plan with purpose
-          </span> */}
+          <span className="mt-1 text-[8px] uppercase tracking-[0.24em] text-[#8B714A]">
+            PLANNER
+          </span>
         </Link>
 
         {/* Desktop navigation */}

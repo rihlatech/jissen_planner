@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const footerLinks = [
@@ -6,10 +5,11 @@ const footerLinks = [
   { label: "Releases", href: "/releases" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "Affiliate Programme", href: "/affiliates" },
 ];
 
 const legalLinks = [
-  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Terms & Conditions and Refund Policy", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
 ];
 
@@ -22,11 +22,8 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div>
-            <Link
-              to="/"
-              className="font-display text-3xl tracking-tight"
-            >
-              Lock-In<span className="text-[#C9A875]">.</span>
+            <Link to="/" className="font-display text-3xl tracking-tight">
+              Jissen Planner<span className="text-[#C9A875]">.</span>
             </Link>
 
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#C9C2B8]">
@@ -105,7 +102,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col gap-4 border-t border-white/15 pt-6 text-xs text-[#AFA79C] sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} Lock-In. All rights reserved.
+            © {new Date().getFullYear()} Jissen Planner. All rights reserved.
           </p>
 
           <p>Built for a more intentional life.</p>
