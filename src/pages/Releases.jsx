@@ -19,19 +19,19 @@ const assets = Object.fromEntries(
 );
 
 const galleryItems = [
-  { name: "planner_stage", title: "Planner" },
-  { name: "monthly_stage", title: "Monthly planning" },
-  { name: "weekly_stage", title: "Weekly planning" },
-  { name: "daily_stage", title: "Daily planning" },
-  { name: "home_page", title: "Home" },
-  { name: "goals_page", title: "Goals" },
-  { name: "selfcare_page", title: "Self-care" },
-  { name: "review_page", title: "Review" },
-  { name: "more_page", title: "More" },
-  { name: "ai_popup_window", title: "Jissen AI" },
-  { name: "settings_page", title: "Settings" },
-  { name: "themes_page", title: "Themes" },
-  { name: "reminders_page", title: "Reminders" },
+  // { name: "planner_stage", title: "Planner" },
+  // { name: "monthly_stage", title: "Monthly planning" },
+  // { name: "weekly_stage", title: "Weekly planning" },
+  // { name: "daily_stage", title: "Daily planning" },
+  { name: "home", title: "Home" },
+  { name: "goals", title: "Goals" },
+  { name: "selfcare", title: "Self-care" },
+  { name: "review", title: "Review" },
+  { name: "more", title: "More" },
+  // { name: "ai_popup_window", title: "Jissen AI" },
+  { name: "settings", title: "Settings" },
+  // { name: "themes_page", title: "Themes" },
+  // { name: "reminders_page", title: "Reminders" },
 ]
   .map((item) => ({
     ...item,
